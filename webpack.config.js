@@ -21,6 +21,15 @@ module.exports = {
     extensions: ['.jsx', '.js', '.json'],
     modules: [SRC, NODE_MODULES, JS],
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       minify: {
@@ -31,8 +40,10 @@ module.exports = {
       inject: false,
       template: './public/index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     contentBase: './build',
+    hot: true,
   },
 };
