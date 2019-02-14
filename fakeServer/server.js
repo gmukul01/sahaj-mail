@@ -1,7 +1,8 @@
 const fs = require('fs'),
 	bodyParser = require('body-parser'),
 	jsonServer = require('json-server'),
-	jwt = require('jsonwebtoken');
+	jwt = require('jsonwebtoken'),
+	cors = require('cors');
 
 const server = jsonServer.create(),
 	router = jsonServer.router('./fakeServer/db.json'),
@@ -15,6 +16,9 @@ const createToken = payload => jwt.sign(payload, SECRET_KEY, { expiresIn }),
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
+
+// Avoid CORS issue
+server.use(cors());
 
 server.post('/auth/login', (req, res) => {
 	const { email, password } = req.body,
@@ -49,5 +53,5 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 server.use(router);
 
 server.listen(4000, () => {
-	console.log('Run Auth API Server');
+	console.log('Json server is running on 4000 port');
 });

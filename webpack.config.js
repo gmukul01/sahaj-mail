@@ -10,7 +10,9 @@ const SRC = path.resolve(__dirname, 'src'),
 module.exports = {
 	context: path.resolve(__dirname),
 	devtool: 'source-map',
-	entry: './src/js/index.js',
+	entry: {
+		js: ['@babel/polyfill', './src/js/index.js']
+	},
 	output: {
 		pathinfo: true,
 		filename: '[name][hash].js',
@@ -40,10 +42,27 @@ module.exports = {
 			inject: false,
 			template: './public/index.html'
 		}),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+			API_BASE_URL: JSON.stringify('http://localhost:4000')
+		})
 	],
 	devServer: {
-		contentBase: './build',
-		hot: true
+		port: 3000,
+		hot: true,
+		inline: true,
+		disableHostCheck: true,
+		historyApiFallback: true,
+		proxy: [
+			{
+				context: ['/auth', '/api'],
+				target: 'http://localhost:4000'
+			}
+		],
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+			'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+		}
 	}
 };

@@ -1,7 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
 
-const title = 'Minimal React Webpack Babel Setup';
+import { sagaMiddleware, store } from 'reducers';
+import rootSaga from 'sagas';
+import Routes from 'routes/Routes';
+import history from 'util/history';
 
-ReactDOM.render(<div>{title}</div>, document.getElementById('root'));
+sagaMiddleware.run(rootSaga);
+
+ReactDOM.render(
+	<Provider store={store}>
+		<Router history={history}>
+			<Routes />
+		</Router>
+	</Provider>,
+	document.getElementById('root')
+);
 module.hot.accept();

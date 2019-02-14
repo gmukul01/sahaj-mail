@@ -1,23 +1,35 @@
 {
-  "extends": ["prettier", "prettier/react"],
-  "parser": "babel-eslint",
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error",
-    "no-console": "warn",
-    "curly": "error",
-    "semi": ["error", "always"],
-    "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "spread": true,
-      "experimentalObjectRestSpread": true,
-      "objectLiteralDuplicateProperties": false
-    }
-  }
+	"env": {
+		"browser": true,
+		"es6": true,
+		"jest": true
+	},
+	"globals": {
+		"window": true,
+		"define": true,
+		"require": true,
+		"module": true,
+		"localstorage": true
+	},
+	"extends": ["react-app"],
+	"parser": "babel-eslint",
+	"plugins": ["babel", "react", "prettier"],
+	"rules": {
+		"no-console": "warn",
+		"semi": ["error", "always"],
+		"jsx-a11y/href-no-hash": "off",
+		"jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+	},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true,
+			"spread": true,
+			"react/jsx-uses-react": "error",
+			"react/jsx-uses-vars": "error",
+			"experimentalObjectRestSpread": true,
+			"objectLiteralDuplicateProperties": false
+		}
+	}
 }
