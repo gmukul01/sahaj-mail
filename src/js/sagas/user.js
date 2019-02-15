@@ -1,20 +1,19 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { FETCH_USER_DETAILS } from 'constants/actionTypes';
-import { fetchUserDetailsSuccess } from 'actions/user';
+import { fetchUserDetailsSuccess, fetchUserDetailsFailure } from 'actions/user';
 import fetch from 'util/fetch';
 import * as URL from 'constants/urls';
 
 export function* fetchUserDetails({ email, password }) {
-	const { response } = yield call(fetch, {
+	const { response, error } = yield call(fetch, {
 		url: URL.USER_DETAILS,
 		method: 'post',
 		data: { email, password }
 	});
-	if (response) {
-		const user = response.data;
-		yield put(fetchUserDetailsSuccess(user));
-	}
+
+	if (response) yield put(fetchUserDetailsSuccess(response.data));
+	if (error) yield put(fetchUserDetailsFailure(error.data.message));
 }
 
 export default function* userSaga() {

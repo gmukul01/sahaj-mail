@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import LoginPage from 'containers/pages/LoginPage';
+import LoginPage from 'containers/pages/Loginpage';
 import Routes from 'routes/Routes';
 
 describe('Routes Component', () => {

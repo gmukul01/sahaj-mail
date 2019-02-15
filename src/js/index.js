@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 
 import { sagaMiddleware, store } from 'reducers';
 import rootSaga from 'sagas';
-import Routes from 'routes/Routes';
+import Routes from 'containers/Routes';
 import history from 'util/history';
 import 'assets/stylesheets/main.scss';
 

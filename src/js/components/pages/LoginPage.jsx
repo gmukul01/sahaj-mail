@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useFormInput } from 'effects/useFormInput';
+import ReactLoading from 'react-loading';
 
-export const Login = ({ isUserLoggedIn, fetchUserDetails, location }) => {
+export const Loginpage = props => {
 	const email = useFormInput(''),
-		password = useFormInput('');
+		password = useFormInput(''),
+		[errorMessage, setErrorMessage] = useState(props.errorMessage);
 
-	//If user is already logged in then redirect to the previous page
-	const { from } = location.state || { from: undefined };
-	if (from && isUserLoggedIn) return <Redirect to={from} />;
+	const { isUserLoggedIn, isLoading, fetchUserDetails, location } = props,
+		{ from } = location.state || { from: undefined };
 
-	function handleClick() {
-		fetchUserDetails(email.value, password.value);
+	if (isUserLoggedIn) {
+		return <Redirect to={from || '/'} />;
+	}
+
+	useEffect(() => {
+		setErrorMessage(props.errorMessage);
+	}, [props.errorMessage]);
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		if (email.value === '' && password.value === '') setErrorMessage('Please enter Email & Password');
+		else if (email.value === '') setErrorMessage('Please enter Email');
+		else if (password.value === '') setErrorMessage('Please enter Password');
+		else fetchUserDetails(email.value, password.value);
 	}
 
 	return (
 		<section className="login">
-			<div className="login-card">
-				<h1>Sign In</h1>
-				<input type="text" {...email} placeholder="Username" />
-				<input type="password" {...password} placeholder="Password" />
-				<button onClick={handleClick}>Login</button>
-			</div>
+			{isLoading ? (
+				<ReactLoading type="spin" color="black" />
+			) : (
+				<form onSubmit={handleSubmit} className="login-card">
+					<h1>Sign In</h1>
+					<input type="text" {...email} placeholder="Username" />
+					<input type="password" {...password} placeholder="Password" />
+					<button type="submit">Login</button>
+				</form>
+			)}
+			{errorMessage && <p> {errorMessage}</p>}
 		</section>
 	);
 };
 
-export default React.memo(Login);
+export default Loginpage;
