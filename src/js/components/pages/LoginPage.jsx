@@ -11,13 +11,13 @@ export const Loginpage = props => {
 	const { isUserLoggedIn, isLoading, fetchUserDetails, location } = props,
 		{ from } = location.state || { from: undefined };
 
-	if (isUserLoggedIn) {
-		return <Redirect to={from || '/'} />;
-	}
-
 	useEffect(() => {
 		setErrorMessage(props.errorMessage);
 	}, [props.errorMessage]);
+
+	if (isUserLoggedIn) {
+		return <Redirect to={from || '/'} />;
+	}
 
 	function handleSubmit(e) {
 		e.preventDefault();
