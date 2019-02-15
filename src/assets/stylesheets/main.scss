@@ -1,4 +1,16 @@
 @import '_variables.scss';
 
+html,
+body {
+	height: 100%;
+	width: 100%;
+	color: $primary-text-color;
+	.root {
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+	}
+}
+
 @import '_login.scss';
-@import '_layout.scss';
+@import '_mailbox.scss';

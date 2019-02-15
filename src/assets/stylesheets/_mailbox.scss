@@ -1,0 +1,32 @@
+.mailbox {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-gap: 5px;
+	margin: 0px;
+	transition: all 0.2s;
+	grid-template-areas:
+		'sidebar header'
+		'sidebar  content';
+	grid-template-rows: minmax(50px, 2fr) 20fr;
+	grid-template-columns: 1fr 20fr;
+
+	&.sidebar_open {
+		grid-template-columns: 5fr 20fr;
+	}
+
+	.sidebar {
+		grid-area: sidebar;
+		background: aquamarine;
+	}
+
+	.header {
+		grid-area: header;
+		background: moccasin;
+	}
+
+	.content {
+		grid-area: content;
+		background: magenta;
+	}
+}
