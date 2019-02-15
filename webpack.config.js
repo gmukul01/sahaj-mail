@@ -1,5 +1,6 @@
 const webpack = require('webpack'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
+	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 	path = require('path');
 
 const SRC = path.resolve(__dirname, 'src'),
@@ -29,10 +30,21 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: ['babel-loader']
+			},
+			{
+				test: /\.s?css/,
+				include: [NODE_MODULES, SRC],
+				loader: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader', 'sass-loader']
+				})
 			}
 		]
 	},
 	plugins: [
+		new ExtractTextPlugin({
+			filename: '[name].css'
+		}),
 		new HtmlWebpackPlugin({
 			minify: {
 				collapseWhitespace: true,

@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useFormInput } from 'effects/useFormInput';
 
 export const Login = ({ isUserLoggedIn, fetchUserDetails, location }) => {
-	const email = useFormInput('Mukul'),
+	const email = useFormInput(''),
 		password = useFormInput('');
 
 	//If user is already logged in then redirect to the previous page
@@ -15,11 +15,14 @@ export const Login = ({ isUserLoggedIn, fetchUserDetails, location }) => {
 	}
 
 	return (
-		<>
-			<input type="text" {...email} />
-			<input type="text" {...password} />
-			<button onClick={handleClick}>Submit</button>
-		</>
+		<section className="login">
+			<div className="login-card">
+				<h1>Sign In</h1>
+				<input type="text" {...email} placeholder="Username" />
+				<input type="password" {...password} placeholder="Password" />
+				<button onClick={handleClick}>Login</button>
+			</div>
+		</section>
 	);
 };
 

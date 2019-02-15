@@ -1,0 +1,12 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+.layout {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	color: $primary-text-color;
+}

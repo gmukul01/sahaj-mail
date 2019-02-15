@@ -7,6 +7,7 @@ import { sagaMiddleware, store } from 'reducers';
 import rootSaga from 'sagas';
 import Routes from 'routes/Routes';
 import history from 'util/history';
+import 'assets/stylesheets/main.scss';
 
 sagaMiddleware.run(rootSaga);
 
