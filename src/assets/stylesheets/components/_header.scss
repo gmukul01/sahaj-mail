@@ -1,0 +1,12 @@
+@mixin header {
+	button {
+		background-image: none;
+		border: none;
+		background-color: $primary-background-color;
+		color: $primary-text-color;
+
+		i {
+			margin-right: 5px;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 html,
 body {
@@ -12,5 +12,5 @@ body {
 	}
 }
 
-@import '_login.scss';
-@import '_mailbox.scss';
+@import 'login';
+@import 'mailbox';

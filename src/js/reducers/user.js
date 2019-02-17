@@ -1,4 +1,4 @@
-import { FETCH_USER_DETAILS_SUCCESS, FETCH_USER_DETAILS, FETCH_USER_DETAILS_FAILURE } from 'constants/actionTypes';
+import { FETCH_USER_DETAILS_SUCCESS, FETCH_USER_DETAILS, FETCH_USER_DETAILS_FAILURE, REMOVE_USER_DETAILS } from 'constants/actionTypes';
 import createReducer from 'reducers/helper';
 
 export const initialState = {
@@ -25,10 +25,13 @@ const addErrorMessage = (state, { errorMessage }) => ({
 	isLoading: false
 });
 
+const removeUserDetails = state => initialState;
+
 const user = createReducer(initialState, {
 	[FETCH_USER_DETAILS]: setLoading,
 	[FETCH_USER_DETAILS_SUCCESS]: addUserDetails,
-	[FETCH_USER_DETAILS_FAILURE]: addErrorMessage
+	[FETCH_USER_DETAILS_FAILURE]: addErrorMessage,
+	[REMOVE_USER_DETAILS]: removeUserDetails
 });
 
 export default user;

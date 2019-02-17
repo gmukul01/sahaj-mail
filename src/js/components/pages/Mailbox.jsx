@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from 'components/header/Header';
 
 const Mailbox = ({ userName }) => {
 	return (
 		<div className="mailbox">
 			<div className="sidebar">sidebar</div>
-			<div className="header">header</div>
+			<Header />
 			<div className="content">content</div>
 		</div>
 	);
