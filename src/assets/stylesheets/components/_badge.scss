@@ -1,0 +1,30 @@
+$badge-colors: (
+	email: #faad50,
+	notification: #00b494
+);
+
+.badge {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -65%;
+	right: -5%;
+	min-width: 10px;
+	min-height: 10px;
+	border-radius: 3px;
+	font-size: 10px;
+	padding: 4px;
+	color: #fff;
+
+	@each $badge-type, $color in $badge-colors {
+		&-#{$badge-type} {
+			position: relative;
+			display: inline-block;
+
+			span {
+				background-color: $color;
+			}
+		}
+	}
+}

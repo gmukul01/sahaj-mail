@@ -1,9 +1,18 @@
+@import './badge';
+
 @mixin header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px;
+
 	button {
 		background-image: none;
 		border: none;
 		background-color: $primary-background-color;
 		color: $primary-text-color;
+		font-size: inherit;
+		margin-left: 10px;
 
 		i {
 			margin-right: 5px;

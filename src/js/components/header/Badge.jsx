@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Badge = () => {
-	return <div className="header-info" />;
+const Badge = ({ children }) => {
+	return <span className="badge">{children}</span>;
 };
+
+export default React.memo(Badge);
