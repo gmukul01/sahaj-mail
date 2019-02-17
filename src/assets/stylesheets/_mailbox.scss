@@ -1,4 +1,4 @@
-@import './components/header';
+@import './components/header/header';
 
 .mailbox {
 	height: 100%;
@@ -24,11 +24,13 @@
 
 	.header {
 		grid-area: header;
+		padding: 0px 10px;
 		@include header();
 	}
 
 	.content {
 		grid-area: content;
+		padding: 0px 10px;
 		background: magenta;
 	}
 }

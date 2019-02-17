@@ -1,0 +1,20 @@
+@mixin header-searchbar {
+	button {
+		@include center-align();
+
+		color: #fff;
+		background: $primary-color;
+		border: 0;
+		text-shadow: none;
+		outline: none;
+		padding: 8px 11px;
+		font-size: 15px;
+		border-radius: 3px;
+		margin-right: 10px;
+	}
+
+	input {
+		width: 100%;
+		border: none;
+	}
+}

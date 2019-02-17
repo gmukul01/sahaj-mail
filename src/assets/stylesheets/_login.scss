@@ -1,7 +1,6 @@
 .login {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include center-align();
+
 	height: 100%;
 	flex-direction: column;
 
@@ -10,13 +9,12 @@
 	}
 
 	&-card {
+		@include center-align();
+
 		width: 25%;
 		height: 40%;
 		min-width: 250px;
 		min-height: 250px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		padding: 15px;
 		flex-direction: column;
 		background: $login-card-background-color;
