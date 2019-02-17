@@ -12,8 +12,8 @@ export function* fetchUserDetails({ email, password }) {
 		data: { email, password }
 	});
 
-	if (response) yield put(fetchUserDetailsSuccess(response.data));
-	if (error) yield put(fetchUserDetailsFailure(error.data.message));
+	if (response) yield put(fetchUserDetailsSuccess(response));
+	if (error) yield put(fetchUserDetailsFailure(error.message));
 }
 
 export default function* userSaga() {

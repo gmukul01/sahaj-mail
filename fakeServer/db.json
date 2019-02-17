@@ -1,1 +1,37 @@
-{}
+{
+	"emails": [
+		{
+			"from": "test2@email.com",
+			"to": "test1@email.com",
+			"category": "social",
+			"label": "family",
+			"isRead": false
+		},
+		{
+			"from": "test1@email.com",
+			"to": "test2@email.com",
+			"category": "work",
+			"label": "work",
+			"isRead": false
+		},
+		{
+			"from": "test1@email.com",
+			"to": "test2@email.com",
+			"category": "documents",
+			"label": "music",
+			"isRead": false
+		}
+	],
+	"inbox": [
+		{
+			"email": "test1@email.com",
+			"totalEmails": 1,
+			"totalUnread": 1
+		},
+		{
+			"email": "test2@email.com",
+			"totalEmails": 2,
+			"totalUnread": 1
+		}
+	]
+}

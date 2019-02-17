@@ -50,7 +50,7 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 	}
 });
 
-server.use(router);
+server.use('/api', router);
 
 server.listen(4000, () => {
 	console.log('Json server is running on 4000 port');
