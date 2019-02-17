@@ -1,6 +1,6 @@
 import React from 'react';
 import Searchbar from './SearchBar';
-import Info from './Info';
+import Info from 'containers/header/Info';
 
 const Header = () => {
 	return (

@@ -1,20 +1,17 @@
 import React from 'react';
-import Logout from 'containers/header/Logout';
+import Logout from './Logout';
 import Badge from './Badge';
 
-const Info = () => {
+const Info = ({ onLogoutClick }) => {
 	return (
 		<div className="header-info">
-			<button class="badge-email">
-				<i class="fas fa-envelope" />
-				<Badge>14</Badge>
-			</button>
-
-			<button class="badge-notification">
+			<Badge className="badge-email" badgeContent={4}>
+				<i className="fas fa-envelope" />
+			</Badge>
+			<Badge className="badge-notification" badgeContent={4}>
 				<i className={`fas fa-bell`} />
-				<Badge>12</Badge>
-			</button>
-			<Logout />
+			</Badge>
+			<Logout {...{ onLogoutClick }} />
 		</div>
 	);
 };
