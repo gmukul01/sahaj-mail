@@ -1,10 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const EmailListItem = props => {
 	const { selectedEmails, addToSelectedEmails, id, from, subject, category, hasAttachment, timestamp } = props;
+	const listClassName = classNames('email-list-item', { selected: selectedEmails.includes(id + '') });
 
 	return (
-		<div className="email-list-item">
+		<div className={listClassName}>
 			<div className="email-list-item__checkbox">
 				<input className="styled-checkbox" value={id} type="checkbox" id={`checkbox-${id}`} defaultChecked={selectedEmails.includes(id)} onChange={addToSelectedEmails} />
 				<label htmlFor={`checkbox-${id}`} />
