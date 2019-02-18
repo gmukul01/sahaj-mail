@@ -38,16 +38,15 @@ export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage }) {
 	const {
 		user: { accessToken }
 	} = loadState();
-	yield Promise.all(
-		emails.map(emailData =>
-			call(fetch, {
-				url: `${URL.EMAILS[folder.toUpperCase()]}/1`,
-				headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-				method: 'put',
-				data: emailData
-			})
-		)
-	);
+
+	for (let emailData of emails) {
+		yield call(fetch, {
+			url: `${URL.EMAILS[folder.toUpperCase()]}/${emailData.id}`,
+			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
+			method: 'put',
+			data: emailData
+		});
+	}
 
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }

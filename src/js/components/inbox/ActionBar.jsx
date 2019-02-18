@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ActionBar = ({ onRefresh, onDelete }) => (
+const ActionBar = ({ onRefresh, onDelete, onRead }) => (
 	<div className="inbox-actionbar">
 		<div className="actions">
 			<button className="button-solid actions-refresh" onClick={onRefresh}>
 				<i className="fas fa-sync-alt" />
 				Refresh
 			</button>
-			<button className="button-solid">
+			<button className="button-solid" onClick={onRead}>
 				<i className="far fa-eye" />
 			</button>
 			<button className="button-solid">

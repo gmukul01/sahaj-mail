@@ -5,23 +5,33 @@ import EmailList from 'components/email/EmailList';
 import ActionBar from './ActionBar';
 
 const Inbox = props => {
-	const { selectedEmails, addToSelectedEmails } = selectedEmailsState([]);
-	const { totalEmails, emails, fetchEmails, deleteEmails, fetchInboxDetails } = props;
-	const onRefresh = () => fetchEmails();
+	const { selectedEmails, addToSelectedEmails, clearSelectedEmails } = selectedEmailsState([]);
+	const { totalEmails, emails, fetchEmails, deleteEmails, readEmails, fetchInboxDetails } = props;
 
 	useEffect(() => {
-		fetchInboxDetails();
 		fetchEmails();
+		fetchInboxDetails();
 	}, []);
+
+	function onRead() {
+		readEmails(selectedEmails);
+		clearSelectedEmails();
+	}
 
 	function onDelete() {
 		deleteEmails(selectedEmails);
+		clearSelectedEmails();
+	}
+
+	function onRefresh() {
+		fetchEmails();
+		clearSelectedEmails();
 	}
 
 	return (
 		<section className="content inbox">
 			<TopBar totalEmails={totalEmails} />
-			<ActionBar onRefresh={onRefresh} onDelete={onDelete} />
+			<ActionBar {...{ onRefresh, onDelete, onRead }} />
 			<EmailList {...{ selectedEmails, addToSelectedEmails, emails }} />
 		</section>
 	);
@@ -30,14 +40,18 @@ const Inbox = props => {
 export default React.memo(Inbox);
 
 const selectedEmailsState = initialValue => {
-	const [emails, addEmail] = useState(initialValue);
+	const [emails, setValue] = useState(initialValue);
 
 	function handleChange(e) {
 		const emailId = e.target.value,
 			newSelectedEmails = emails.indexOf(emailId) === -1 ? [...emails, emailId] : emails.filter(id => id !== emailId);
 
-		addEmail(newSelectedEmails);
+		setValue(newSelectedEmails);
 	}
 
-	return { selectedEmails: emails, addToSelectedEmails: handleChange };
+	function clearSelectedEmails() {
+		setValue([]);
+	}
+
+	return { selectedEmails: emails, addToSelectedEmails: handleChange, clearSelectedEmails };
 };
