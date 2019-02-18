@@ -23,15 +23,13 @@ export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage })
 	const {
 		user: { accessToken }
 	} = loadState();
-	yield Promise.all(
-		emails.map(id =>
-			call(fetch, {
-				url: `${URL.EMAILS[folder.toUpperCase()]}/1`,
-				headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-				method: 'delete'
-			})
-		)
-	);
+	for (let id of emails) {
+		yield call(fetch, {
+			url: `${URL.EMAILS[folder.toUpperCase()]}/${id}`,
+			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
+			method: 'delete'
+		});
+	}
 
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }

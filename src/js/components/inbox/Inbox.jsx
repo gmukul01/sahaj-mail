@@ -6,7 +6,7 @@ import ActionBar from './ActionBar';
 
 const Inbox = props => {
 	const { selectedEmails, addToSelectedEmails } = selectedEmailsState([]);
-	const { totalEmails, emails, fetchEmails, fetchInboxDetails } = props;
+	const { totalEmails, emails, fetchEmails, deleteEmails, fetchInboxDetails } = props;
 	const onRefresh = () => fetchEmails();
 
 	useEffect(() => {
@@ -14,10 +14,14 @@ const Inbox = props => {
 		fetchEmails();
 	}, []);
 
+	function onDelete() {
+		deleteEmails(selectedEmails);
+	}
+
 	return (
 		<section className="content inbox">
 			<TopBar totalEmails={totalEmails} />
-			<ActionBar onRefresh={onRefresh} />
+			<ActionBar onRefresh={onRefresh} onDelete={onDelete} />
 			<EmailList {...{ selectedEmails, addToSelectedEmails, emails }} />
 		</section>
 	);

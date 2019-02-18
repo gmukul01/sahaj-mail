@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import CheckBox from 'components/CheckBox';
 
 const EmailListItem = props => {
-	const { selectedEmails, addToSelectedEmails, id, from, subject, category, hasAttachment, timestamp } = props;
-	const listClassName = classNames('email-list-item', { selected: selectedEmails.includes(id + '') });
+	const { selectedEmails, addToSelectedEmails, id, from, subject, isRead, category, hasAttachment, timestamp } = props;
+	const listClassName = classNames('email-list-item', { selected: selectedEmails.includes(id + '') || isRead });
 
 	return (
 		<div className={listClassName}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ActionBar = ({ onRefresh }) => (
+const ActionBar = ({ onRefresh, onDelete }) => (
 	<div className="inbox-actionbar">
 		<div className="actions">
 			<button className="button-solid actions-refresh" onClick={onRefresh}>
@@ -13,7 +13,7 @@ const ActionBar = ({ onRefresh }) => (
 			<button className="button-solid">
 				<i className="fas fa-exclamation" />
 			</button>
-			<button className="button-solid" onClick={() => {}}>
+			<button className="button-solid" onClick={onDelete}>
 				<i className="far fa-trash-alt" />
 			</button>
 		</div>
