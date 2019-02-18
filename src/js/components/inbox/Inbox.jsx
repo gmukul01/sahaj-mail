@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import TopBar from './TopBar';
 import EmailList from 'components/email/EmailList';
 import ActionBar from './ActionBar';
 
-const Inbox = ({ totalEmails, emails }) => {
+const Inbox = props => {
 	const { selectedEmails, addToSelectedEmails } = selectedEmailsState([]);
+	const { totalEmails, emails, fetchEmails, fetchInboxDetails } = props;
+	const onRefresh = () => fetchEmails();
+
+	useEffect(() => {
+		fetchInboxDetails();
+		fetchEmails();
+	}, []);
 
 	return (
 		<section className="content inbox">
 			<TopBar totalEmails={totalEmails} />
-			<ActionBar />
+			<ActionBar onRefresh={onRefresh} />
 			<EmailList {...{ selectedEmails, addToSelectedEmails, emails }} />
 		</section>
 	);

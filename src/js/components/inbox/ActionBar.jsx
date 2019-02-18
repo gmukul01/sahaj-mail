@@ -1,17 +1,17 @@
 import React from 'react';
 
-const ActionBar = () => (
+const ActionBar = ({ onRefresh }) => (
 	<div className="inbox-actionbar">
 		<div className="actions">
-			<button className="button-solid actions-refresh">
+			<button className="button-solid actions-refresh" onClick={onRefresh}>
 				<i className="fas fa-sync-alt" />
 				Refresh
 			</button>
 			<button className="button-solid">
-				<i class="far fa-eye" />
+				<i className="far fa-eye" />
 			</button>
 			<button className="button-solid">
-				<i class="fas fa-exclamation" />
+				<i className="fas fa-exclamation" />
 			</button>
 			<button className="button-solid" onClick={() => {}}>
 				<i className="far fa-trash-alt" />
