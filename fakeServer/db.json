@@ -7,8 +7,8 @@
 				"email": "test2@email.com"
 			},
 			"to": "test1@email.com",
-			"category": "social",
-			"label": "family",
+			"category": "Social",
+			"label": "Family",
 			"isRead": false,
 			"subject": "Aldus PageMaker including versions or Lorem ipsum",
 			"hasAttachment": true,
@@ -22,8 +22,8 @@
 				"email": "test1email.com"
 			},
 			"to": "test2@email.com",
-			"category": "work",
-			"label": "work",
+			"category": "Work",
+			"label": "Work",
 			"isRead": false,
 			"timestamp": 1550458891067,
 			"subject": "Aldus PageMaker including versions or Lorem ipsum",
@@ -37,8 +37,8 @@
 				"email": "test1@email.com"
 			},
 			"to": "test2@email.com",
-			"category": "documents",
-			"label": "music",
+			"category": "Documents",
+			"label": "Music",
 			"isRead": false,
 			"timestamp": 1549989305332,
 			"subject": "Lorem ipsum dolon noretek imit set",

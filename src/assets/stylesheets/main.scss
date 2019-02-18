@@ -16,8 +16,9 @@ body {
 		overflow: auto;
 	}
 }
-
-@import 'login';
-@import 'mailbox';
+@import './components/chips';
+@import './components/checkbox';
 @import './components/email/emaillist';
 @import './components/inbox/inbox';
+@import 'login';
+@import 'mailbox';

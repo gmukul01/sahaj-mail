@@ -9,7 +9,7 @@
 		align-items: center;
 		width: 100%;
 		padding: 10px 0px;
-		border: 1px solid lightgrey;
+		border: 1px solid $primary-border-color;
 		border-bottom: 0 none;
 
 		* {
@@ -20,6 +20,11 @@
 		}
 
 		&__checkbox {
+			width: 25px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			flex: 1 1 32px;
 		}
 

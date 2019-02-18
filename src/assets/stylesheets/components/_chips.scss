@@ -1,0 +1,20 @@
+.chips {
+	&-btn {
+		border: 0;
+		padding: 3px 5px;
+		color: #fff;
+		border-radius: 3px;
+
+		@each $catagory-type, $color in $categories-colors {
+			&.#{$catagory-type} {
+				background-color: $color;
+			}
+		}
+
+		@each $folder-name, $color in $folders-colors {
+			&.#{$folder-name} {
+				background-color: $color;
+			}
+		}
+	}
+}

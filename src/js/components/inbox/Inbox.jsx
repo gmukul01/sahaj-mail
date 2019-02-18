@@ -4,7 +4,7 @@ import TopBar from './TopBar';
 import EmailList from 'components/email/EmailList';
 
 const Inbox = ({ totalEmails, emails }) => {
-	const [selectedEmails, addToSelectedEmails] = useState([]);
+	const { selectedEmails, addToSelectedEmails } = selectedEmailsState([]);
 
 	return (
 		<section className="content inbox">
@@ -15,3 +15,16 @@ const Inbox = ({ totalEmails, emails }) => {
 };
 
 export default React.memo(Inbox);
+
+const selectedEmailsState = initialValue => {
+	const [emails, addEmail] = useState(initialValue);
+
+	function handleChange(e) {
+		const emailId = e.target.value,
+			newSelectedEmails = emails.indexOf(emailId) === -1 ? [...emails, emailId] : emails.filter(id => id !== emailId);
+
+		addEmail(newSelectedEmails);
+	}
+
+	return { selectedEmails: emails, addToSelectedEmails: handleChange };
+};

@@ -1,0 +1,39 @@
+.styled-checkbox {
+	width: 25px;
+	height: 25px;
+	opacity: 0;
+
+	&:checked + label {
+		background-color: $primary-selected-color;
+
+		&:after {
+			opacity: 1;
+		}
+	}
+
+	+ label {
+		cursor: pointer;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 0px;
+		left: 13px;
+		border: 1px solid $primary-border-color;
+
+		&:after {
+			opacity: 0;
+			content: '';
+			position: absolute;
+			width: 9px;
+			height: 5px;
+			background: transparent;
+			top: 4px;
+			left: 5px;
+			border: 2px solid white;
+			border-top: none;
+			border-right: none;
+
+			transform: rotate(-45deg);
+		}
+	}
+}
