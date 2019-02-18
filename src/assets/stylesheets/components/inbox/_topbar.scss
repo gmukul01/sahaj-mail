@@ -1,0 +1,8 @@
+@mixin inbox-topbar() {
+	display: flex;
+	justify-content: space-between;
+
+	&__title {
+		font-size: 2rem;
+	}
+}

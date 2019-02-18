@@ -1,0 +1,21 @@
+@import './topbar';
+
+.inbox {
+	background-color: $primary-background-color;
+	color: $inbox-text-color;
+
+	&-topbar {
+		display: flex;
+		justify-content: space-between;
+		margin: 25px 30px 10px;
+
+		&-title {
+			font-size: 2rem;
+		}
+	}
+
+	&-actionbar {
+		display: flex;
+		justify-content: space-between;
+	}
+}

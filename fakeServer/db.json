@@ -1,25 +1,49 @@
 {
 	"emails": [
 		{
-			"from": "test2@email.com",
+			"id": 1,
+			"from": {
+				"name": "Test2",
+				"email": "test2@email.com"
+			},
 			"to": "test1@email.com",
 			"category": "social",
 			"label": "family",
-			"isRead": false
+			"isRead": false,
+			"subject": "Aldus PageMaker including versions or Lorem ipsum",
+			"hasAttachment": true,
+			"timestamp": 1550421231046,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 		},
 		{
-			"from": "test1@email.com",
+			"id": 2,
+			"from": {
+				"name": "Test1",
+				"email": "test1email.com"
+			},
 			"to": "test2@email.com",
 			"category": "work",
 			"label": "work",
-			"isRead": false
+			"isRead": false,
+			"timestamp": 1550458891067,
+			"subject": "Aldus PageMaker including versions or Lorem ipsum",
+			"hasAttachment": false,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 		},
 		{
-			"from": "test1@email.com",
+			"id": 3,
+			"from": {
+				"name": "Test1",
+				"email": "test1@email.com"
+			},
 			"to": "test2@email.com",
 			"category": "documents",
 			"label": "music",
-			"isRead": false
+			"isRead": false,
+			"timestamp": 1549989305332,
+			"subject": "Lorem ipsum dolon noretek imit set",
+			"hasAttachment": true,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 		}
 	],
 	"inbox": [

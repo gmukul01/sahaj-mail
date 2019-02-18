@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Mailbox from 'components/pages/Mailbox';
+import Mailbox from 'components/pages/MailBox';
 import { fetchInboxDetails, fetchInboxEmails } from 'actions/inbox';
 
 const mapStateToProps = ({ user: { name }, inbox: { pageNumber, emailsPerPage } }) => ({

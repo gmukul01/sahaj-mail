@@ -4,14 +4,14 @@
 	height: 100%;
 	width: 100%;
 	display: grid;
-	grid-gap: 5px;
 	margin: 0px;
 	transition: all 0.2s;
 	grid-template-areas:
-		'sidebar header'
-		'sidebar  content';
+		'sidebar header header'
+		'sidebar  menu content';
 	grid-template-rows: minmax(50px, 1fr) 20fr;
-	grid-template-columns: 1fr 20fr;
+	grid-template-columns: 1fr 5fr 20fr;
+	background-color: $mailbox-background-color;
 
 	&.sidebar_open {
 		grid-template-columns: 5fr 20fr;
@@ -22,15 +22,22 @@
 		background: aquamarine;
 	}
 
+	.menubar {
+		grid-area: menu;
+		background: magenta;
+	}
+
 	.header {
 		grid-area: header;
-		padding: 0px 10px;
+		padding: 0px 30px 0px 20px;
+		background-color: $primary-background-color;
 		@include header();
 	}
 
 	.content {
 		grid-area: content;
-		padding: 0px 10px;
-		background: magenta;
+		margin: 20px 30px 0px 0px;
+		border: 1px solid $primary-border-color;
+		background-color: $primary-background-color;
 	}
 }

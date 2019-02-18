@@ -1,0 +1,50 @@
+.email-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& &-item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		padding: 10px 0px;
+		border: 1px solid lightgrey;
+		border-bottom: 0 none;
+
+		* {
+			margin: 0px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&__checkbox {
+			flex: 1 1 32px;
+		}
+
+		&__from {
+			flex: 2 1 100px;
+		}
+
+		&__category {
+			display: flex;
+			justify-content: flex-end;
+			flex: 1 1 70px;
+			padding-right: 10px;
+		}
+
+		&__subject {
+			flex: 25 0 250px;
+		}
+
+		&__attachment {
+			flex: 1 1 32px;
+		}
+
+		&__timestamp {
+			justify-content: flex-end;
+			flex: 1 1 auto;
+		}
+	}
+}

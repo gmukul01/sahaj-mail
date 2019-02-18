@@ -1,11 +1,11 @@
 import React from 'react';
 import Logout from './Logout';
-import Badge from './Badge';
+import Badge from '../Badge';
 
-const Info = ({ onLogoutClick }) => {
+const Info = ({ onLogoutClick, totalUnread }) => {
 	return (
 		<div className="header-info">
-			<Badge className="badge-email" badgeContent={4}>
+			<Badge className="badge-email" badgeContent={totalUnread}>
 				<i className="fas fa-envelope" />
 			</Badge>
 			<Badge className="badge-notification" badgeContent={4}>
