@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import CheckBox from 'components/CheckBox';
 
 const EmailListItem = props => {
 	const { selectedEmails, addToSelectedEmails, id, from, subject, category, hasAttachment, timestamp } = props;
@@ -8,8 +9,7 @@ const EmailListItem = props => {
 	return (
 		<div className={listClassName}>
 			<div className="email-list-item__checkbox">
-				<input className="styled-checkbox" value={id} type="checkbox" id={`checkbox-${id}`} defaultChecked={selectedEmails.includes(id)} onChange={addToSelectedEmails} />
-				<label htmlFor={`checkbox-${id}`} />
+				<CheckBox id={id} selected={selectedEmails.includes(id)} onChange={addToSelectedEmails} />
 			</div>
 			<p className="email-list-item__from">{from.name}</p>
 			<div className="email-list-item__category">
