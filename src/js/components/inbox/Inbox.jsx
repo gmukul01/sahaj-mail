@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import TopBar from './TopBar';
 import EmailList from 'components/email/EmailList';
+import ActionBar from './ActionBar';
 
 const Inbox = ({ totalEmails, emails }) => {
 	const { selectedEmails, addToSelectedEmails } = selectedEmailsState([]);
@@ -9,6 +10,7 @@ const Inbox = ({ totalEmails, emails }) => {
 	return (
 		<section className="content inbox">
 			<TopBar totalEmails={totalEmails} />
+			<ActionBar />
 			<EmailList {...{ selectedEmails, addToSelectedEmails, emails }} />
 		</section>
 	);

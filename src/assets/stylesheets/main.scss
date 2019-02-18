@@ -18,7 +18,8 @@ body {
 }
 @import './components/chips';
 @import './components/checkbox';
+@import './components/button';
 @import './components/email/emaillist';
 @import './components/inbox/inbox';
-@import 'login';
-@import 'mailbox';
+@import './pages/login';
+@import './pages/mailbox';

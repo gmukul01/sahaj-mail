@@ -1,0 +1,10 @@
+.button {
+	&-solid {
+		background-color: white;
+		padding: 5px 10px;
+		border: 1px solid $primary-border-color;
+		border-radius: 3px;
+		font-size: inherit;
+		color: inherit;
+	}
+}

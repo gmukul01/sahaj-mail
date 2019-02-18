@@ -1,5 +1,3 @@
-@import './topbar';
-
 .inbox {
 	background-color: $primary-background-color;
 	color: $inbox-text-color;
@@ -9,14 +7,26 @@
 		justify-content: space-between;
 		padding: 25px 30px 10px;
 
-		&-title {
+		.title {
 			font-size: 2rem;
 		}
 	}
 
 	&-actionbar {
 		display: flex;
+		padding: 0px 30px 10px;
 		justify-content: space-between;
+
+		.actions {
+			&-refresh {
+				i {
+					margin-right: 5px;
+				}
+			}
+			button {
+				margin-right: 5px;
+			}
+		}
 	}
 
 	.email-list {
