@@ -35,6 +35,12 @@
 			flex: 1 1 32px;
 		}
 
+		&__rest {
+			display: flex;
+			flex: 50 1 400px;
+			cursor: pointer;
+		}
+
 		&__from {
 			flex: 2 1 100px;
 		}
