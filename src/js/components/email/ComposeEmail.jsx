@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Modal from 'components/Modal';
 import { useFormInput } from 'effects/useFormInput';
@@ -6,7 +6,8 @@ import { useFormInput } from 'effects/useFormInput';
 const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 	const to = useFormInput(''),
 		subject = useFormInput(''),
-		body = useFormInput('');
+		body = useFormInput(''),
+		[errorMessage, setErrorMessage] = useState('');
 
 	const onSend = () => {
 		const email = {
@@ -18,24 +19,34 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 		sendEmail(email);
 	};
 
+	const handelClose = () => {
+		setErrorMessage('');
+		onCloseModal();
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+
+		if (to.value === '' && body.value === '') setErrorMessage('Please enter details');
+		if (to.value === '') setErrorMessage('Please enter To');
+		else if (body.value === '') setErrorMessage('Please enter Body');
+		else onSend();
+	};
+
 	return (
-		<Modal {...{ showModal, onCloseModal, onConfirmModal: onSend, confirmText: 'Send', header: 'New Message' }}>
-			<div className="compose-email">
-				<div className="email-field">
-					<label>To</label>
-					<input type="text" {...to} />
-				</div>
-
-				<div className="email-field">
-					<label>Subject</label>
-					<input type="text" {...subject} />
-				</div>
-
-				<div className="email-field">
-					<label>Body</label>
-					<input type="text" {...body} />
-				</div>
-			</div>
+		<Modal {...{ showModal, onCloseModal: handelClose, header: 'New Message' }}>
+			<form onSubmit={handleSubmit} className="compose-email">
+				<label>To</label>
+				<input type="text" {...to} />
+				<label>Subject</label>
+				<input type="text" {...subject} />
+				<label>Body</label>
+				<textarea {...body} />
+				<button className="button-solid" type="submit">
+					Send
+				</button>
+			</form>
+			{errorMessage && <p className="error">{errorMessage}</p>}
 		</Modal>
 	);
 };

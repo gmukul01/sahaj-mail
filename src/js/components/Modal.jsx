@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Modal = props => {
-	const { showModal, onCloseModal, onConfirmModal, confirmText, header } = props;
+	const { showModal, onCloseModal, header } = props;
 	const modalClassName = classNames('modal', { open: showModal });
 
 	return (
@@ -15,11 +15,6 @@ const Modal = props => {
 					</button>
 				</div>
 				<div className="modal-body">{props.children}</div>
-				<div className="modal-footer">
-					<button className="button-solid" onClick={onConfirmModal}>
-						{confirmText}
-					</button>
-				</div>
 			</div>
 		</div>
 	);

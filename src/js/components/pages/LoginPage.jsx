@@ -19,14 +19,14 @@ export const Loginpage = props => {
 		return <Redirect to={from || '/'} />;
 	}
 
-	function handleSubmit(e) {
+	const handleSubmit = e => {
 		e.preventDefault();
 
 		if (email.value === '' && password.value === '') setErrorMessage('Please enter Email & Password');
 		else if (email.value === '') setErrorMessage('Please enter Email');
 		else if (password.value === '') setErrorMessage('Please enter Password');
 		else fetchUserDetails(email.value, password.value);
-	}
+	};
 
 	return (
 		<section className="login">
@@ -40,7 +40,7 @@ export const Loginpage = props => {
 					<button type="submit">Login</button>
 				</form>
 			)}
-			{errorMessage && <p> {errorMessage}</p>}
+			{errorMessage && <p className="error"> {errorMessage}</p>}
 		</section>
 	);
 };

@@ -16,11 +16,13 @@ body {
 		overflow: auto;
 	}
 }
+@import './commons';
 @import './components/chips';
 @import './components/checkbox';
 @import './components/button';
 @import './components/modal';
 @import './components/email/emaillist';
+@import './components/email/compose';
 @import './components/inbox/inbox';
 @import './pages/login';
 @import './pages/mailbox';
