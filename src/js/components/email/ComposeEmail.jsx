@@ -17,6 +17,9 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 		};
 		onCloseModal();
 		sendEmail(email);
+		to.setValue('');
+		subject.setValue('');
+		body.setValue('');
 	};
 
 	const handelClose = () => {
