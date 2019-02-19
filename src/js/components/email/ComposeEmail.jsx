@@ -4,9 +4,9 @@ import Modal from 'components/Modal';
 import { useFormInput } from 'effects/useFormInput';
 
 const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
-	const to = useFormInput(''),
-		subject = useFormInput(''),
-		body = useFormInput(''),
+	const { setValue: setTo, ...to } = useFormInput(''),
+		{ setValue: setSubject, ...subject } = useFormInput(''),
+		{ setValue: setBody, ...body } = useFormInput(''),
 		[errorMessage, setErrorMessage] = useState('');
 
 	const onSend = () => {
@@ -17,9 +17,9 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 		};
 		onCloseModal();
 		sendEmail(email);
-		to.setValue('');
-		subject.setValue('');
-		body.setValue('');
+		setTo('');
+		setSubject('');
+		setBody('');
 	};
 
 	const handelClose = () => {
@@ -40,11 +40,11 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 		<Modal {...{ showModal, onCloseModal: handelClose, header: 'New Message' }}>
 			<form onSubmit={handleSubmit} className="compose-email">
 				<label>To</label>
-				<input type="text" {...to} />
+				<input type="text" {...to} placeholder="Enter recipient email id" />
 				<label>Subject</label>
-				<input type="text" {...subject} />
+				<input type="text" {...subject} placeholder="Enter subject" />
 				<label>Body</label>
-				<textarea {...body} />
+				<textarea {...body} placeholder="Enter message" />
 				<button className="button-solid" type="submit">
 					Send
 				</button>

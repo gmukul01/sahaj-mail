@@ -4,8 +4,8 @@ import { useFormInput } from 'effects/useFormInput';
 import ReactLoading from 'react-loading';
 
 export const Loginpage = props => {
-	const email = useFormInput(''),
-		password = useFormInput(''),
+	const { setValue: setEmail, ...email } = useFormInput(''),
+		{ setValue: setPassword, ...password } = useFormInput(''),
 		[errorMessage, setErrorMessage] = useState(props.errorMessage);
 
 	const { isUserLoggedIn, isLoading, fetchUserDetails, location } = props,
