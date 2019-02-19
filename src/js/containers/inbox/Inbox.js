@@ -23,12 +23,12 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 			fetchEmails('inbox', pageNumber, emailsPerPage);
 		},
 		deleteEmails(selectedEmails) {
-			const readEmails = emails.filter(({ id, isRead }) => selectedEmails.includes(id + '') && !isRead);
-			deleteEmails('inbox', selectedEmails, pageNumber, emailsPerPage, totalEmails - selectedEmails.length, totalUnread - readEmails.length);
+			const readEmails = emails.filter(({ id, isRead }) => selectedEmails.includes(id) && !isRead);
+			selectedEmails.length > 0 && deleteEmails('inbox', selectedEmails, pageNumber, emailsPerPage, totalEmails - selectedEmails.length, totalUnread - readEmails.length);
 		},
 		readEmails(selectedEmails) {
-			const newEmails = emails.filter(({ id }) => selectedEmails.includes(id + '')).map(emailDetails => ({ ...emailDetails, isRead: true }));
-			readEmails('inbox', newEmails, pageNumber, emailsPerPage, totalEmails, totalUnread - newEmails.length);
+			const newEmails = emails.filter(({ id, isRead }) => selectedEmails.includes(id) && !isRead).map(emailDetails => ({ ...emailDetails, isRead: true }));
+			newEmails.length > 0 && readEmails('inbox', newEmails, pageNumber, emailsPerPage, totalEmails, totalUnread - newEmails.length);
 		}
 	};
 };

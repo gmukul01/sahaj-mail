@@ -32,7 +32,7 @@ const Inbox = props => {
 		<section className="content inbox">
 			<TopBar totalEmails={totalEmails} />
 			<ActionBar {...{ onRefresh, onDelete, onRead }} />
-			<EmailList {...{ selectedEmails, addToSelectedEmails, emails }} />
+			<EmailList {...{ selectedEmails, addToSelectedEmails, onRead: readEmails, emails }} />
 		</section>
 	);
 };
@@ -43,7 +43,7 @@ const selectedEmailsState = initialValue => {
 	const [emails, setValue] = useState(initialValue);
 
 	function handleChange(e) {
-		const emailId = e.target.value,
+		const emailId = Number(e.target.value),
 			newSelectedEmails = emails.indexOf(emailId) === -1 ? [...emails, emailId] : emails.filter(id => id !== emailId);
 
 		setValue(newSelectedEmails);

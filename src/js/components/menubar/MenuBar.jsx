@@ -5,10 +5,9 @@ import Categories from './Categories';
 import ComposeEmail from 'components/email/ComposeEmail';
 
 const MenuBar = ({ totalUnread, sendEmail }) => {
-	const [showModal, setModalState] = useState(false);
-
-	const onCloseModal = () => setModalState(false);
-	const onOpenModal = () => setModalState(true);
+	const [showModal, setModalState] = useState(false),
+		onCloseModal = () => setModalState(false),
+		onOpenModal = () => setModalState(true);
 
 	return (
 		<section className="menubar">

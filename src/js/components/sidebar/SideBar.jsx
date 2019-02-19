@@ -20,8 +20,8 @@ const SideBar = ({ handleSidebarOpen }) => {
 		<section className="sidebar" onClick={handleSidebarOpen}>
 			<button className="sidebar-row logo">IN+</button>
 			{sidebarIcons.map((icon, index) => (
-				<div className={`sidebar-row ${icon.isActive ? 'active' : ''}`}>
-					<button key={`${icon.iconType}${index}`}>
+				<div className={`sidebar-row ${icon.isActive ? 'active' : ''}`} key={`${icon.iconType}${index}`}>
+					<button>
 						<i className={`fas ${icon.iconType}`} />
 						<p>{icon.name}</p>
 					</button>
