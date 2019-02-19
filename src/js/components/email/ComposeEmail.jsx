@@ -3,20 +3,19 @@ import React from 'react';
 import Modal from 'components/Modal';
 import { useFormInput } from 'effects/useFormInput';
 
-const ComposeEmail = ({ showModal, onCloseModal }) => {
+const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 	const to = useFormInput(''),
-		cc = useFormInput(''),
 		subject = useFormInput(''),
 		body = useFormInput('');
 
 	const onSend = () => {
 		const email = {
 			to: to.value,
-			cc: cc.value,
 			subject: subject.value,
 			body: body.value
 		};
-		console.log('Email fields=> ', email);
+		onCloseModal();
+		sendEmail(email);
 	};
 
 	return (
@@ -25,11 +24,6 @@ const ComposeEmail = ({ showModal, onCloseModal }) => {
 				<div className="email-field">
 					<label>To</label>
 					<input type="text" {...to} />
-				</div>
-
-				<div className="email-field">
-					<label>CC</label>
-					<input type="text" {...cc} />
 				</div>
 
 				<div className="email-field">

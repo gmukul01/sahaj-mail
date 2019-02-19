@@ -4,7 +4,7 @@ import Labels from './Labels';
 import Categories from './Categories';
 import ComposeEmail from 'components/email/ComposeEmail';
 
-const MenuBar = ({ totalUnread }) => {
+const MenuBar = ({ totalUnread, sendEmail }) => {
 	const [showModal, setModalState] = useState(false);
 
 	const onCloseModal = () => setModalState(false);
@@ -15,7 +15,7 @@ const MenuBar = ({ totalUnread }) => {
 			<button className="button-solid menubar-compose" onClick={onOpenModal}>
 				Compose Mail
 			</button>
-			<ComposeEmail {...{ showModal, onCloseModal }} />
+			<ComposeEmail {...{ showModal, onCloseModal, sendEmail }} />
 			<Folders totalUnread={totalUnread} />
 			<Categories />
 			<Labels />

@@ -7,13 +7,20 @@ import {
 	DELETE_EMAILS_ERROR,
 	READ_EMAILS,
 	READ_EMAILS_SUCCESS,
-	READ_EMAILS_ERROR
+	READ_EMAILS_ERROR,
+	SEND_EMAIL,
+	SEND_EMAIL_SUCCESS,
+	SEND_EMAIL_ERROR
 } from 'constants/actionTypes';
 import actionCreator from 'actions/helper';
 
 export const fetchEmails = actionCreator(FETCH_EMAILS, 'folder', 'pageNumber', 'emailsPerPage');
 export const fetchEmailsSuccess = actionCreator(FETCH_EMAILS_SUCCESS, 'folder', 'emails');
 export const fetchEmailsError = actionCreator(FETCH_EMAILS_ERROR, 'folder', 'errorMessage');
+
+export const sendEmail = actionCreator(SEND_EMAIL, 'emailDetails', 'folder', 'pageNumber', 'emailsPerPage', 'totalEmails', 'totalUnread');
+export const sendEmailSuccess = actionCreator(SEND_EMAIL_SUCCESS, 'emailDetails');
+export const SendEmailError = actionCreator(SEND_EMAIL_ERROR, 'emailDetails', 'errorMessage');
 
 export const deleteEmails = actionCreator(DELETE_EMAILS, 'folder', 'emails', 'pageNumber', 'emailsPerPage', 'totalEmails', 'totalUnread');
 export const deleteEmailsSuccess = actionCreator(DELETE_EMAILS_SUCCESS, 'folder');
