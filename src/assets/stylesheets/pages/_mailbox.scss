@@ -1,3 +1,4 @@
+@import './components/sidebar/sidebar';
 @import './components/header/header';
 @import './components/menubar/menubar';
 
@@ -14,13 +15,20 @@
 	grid-template-columns: 1fr 5fr 20fr;
 	background-color: $mailbox-background-color;
 
-	&.sidebar_open {
-		grid-template-columns: 5fr 20fr;
+	&.sidebar-open {
+		grid-template-columns: 5fr 5fr 20fr;
+
+		.sidebar-row {
+			.sidebar-dropdown,
+			p {
+				display: inline-block;
+			}
+		}
 	}
 
 	.sidebar {
 		grid-area: sidebar;
-		background: aquamarine;
+		@include sidebar();
 	}
 
 	.menubar {

@@ -1,14 +1,27 @@
 //colors
 $primary-color: #00b494;
-$error-color: red;
 $primary-background-color: white;
 $primary-text-color: #999c9e;
-$secondary-text-color: #676a6c;
 $primary-border-color: #e7eaec;
 $primary-selected-color: #338e7b;
+
+$secondary-text-color: #676a6c;
+
+$error-color: red;
+
 $login-card-background-color: #f3f3f4;
+
 $mailbox-background-color: #f3f3f4;
+
+$inbox-text-color: #686b6d;
+
+$sidebar-background-color: #2f4050;
+$sidebar-icon-color: #a6b1c3;
+$sidebar-icon-active-color: #fff;
+$sidebar-icon-active-background-color: #283847;
+
 $selected-emails-background-color: #f9f8f8;
+
 $badge-colors: (
 	email: #faad50,
 	notification: #00b494
@@ -26,7 +39,6 @@ $folders-colors: (
 	inbox: #faad50,
 	drafts: #ed5666
 );
-$inbox-text-color: #686b6d;
 
 // sizes
 $font-size: 14px;

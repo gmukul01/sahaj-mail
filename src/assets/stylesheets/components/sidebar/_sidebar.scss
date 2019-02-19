@@ -1,0 +1,56 @@
+@mixin sidebar {
+	display: flex;
+	flex-direction: column;
+	background: $sidebar-background-color;
+
+	&-row {
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 15px 0px 20px;
+		align-items: center;
+		flex: 1 0 auto;
+		width: 100%;
+		box-sizing: border-box;
+		max-height: 58px;
+
+		.sidebar-dropdown,
+		p {
+			display: none;
+		}
+
+		p {
+			margin: 0px;
+		}
+
+		&.active {
+			border-left: 5px solid $primary-color;
+			background-color: $sidebar-icon-active-background-color;
+
+			i {
+				color: $sidebar-icon-active-color;
+			}
+		}
+	}
+
+	button.logo {
+		font-weight: 500;
+		color: $sidebar-icon-active-color;
+		background-color: $sidebar-icon-active-background-color;
+	}
+
+	button {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background: inherit;
+		border: 0;
+		font-size: 1.5rem;
+		color: $sidebar-icon-color;
+
+		i {
+			color: $sidebar-icon-color;
+			font-size: 1.5rem;
+			margin-right: 10px;
+		}
+	}
+}

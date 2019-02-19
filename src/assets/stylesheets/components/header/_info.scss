@@ -1,5 +1,6 @@
 @mixin header-info {
 	button {
+		cursor: pointer;
 		background-image: none;
 		border: none;
 		background-color: $primary-background-color;
