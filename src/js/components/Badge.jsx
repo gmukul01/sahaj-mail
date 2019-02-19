@@ -6,7 +6,7 @@ const Badge = props => {
 	return (
 		<button className={className}>
 			{children}
-			<span className="badge">{badgeContent}</span>
+			{badgeContent && badgeContent !== 0 ? <span className="badge">{badgeContent}</span> : null}
 		</button>
 	);
 };

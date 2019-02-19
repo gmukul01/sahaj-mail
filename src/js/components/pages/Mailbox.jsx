@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from 'components/header/Header';
 import Inbox from 'containers/inbox/Inbox';
-import MenuBar from 'components/menubar/MenuBar';
+import MenuBar from 'containers/menubar/MenuBar';
 
 const Mailbox = props => {
 	return (

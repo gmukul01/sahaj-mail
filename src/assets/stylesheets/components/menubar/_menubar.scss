@@ -1,0 +1,63 @@
+.menubar {
+	color: $secondary-text-color;
+
+	&-compose {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	h5 {
+		font-weight: 700;
+		font-size: 14px;
+		margin: 15px 0px;
+	}
+
+	ul {
+		padding: 0px;
+		li {
+			list-style: none;
+		}
+	}
+
+	i {
+		margin-right: 8px;
+	}
+
+	&-folders {
+		li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 6px 0;
+			border-bottom: 1px solid $primary-border-color;
+		}
+
+		@each $folder, $color in $folders-colors {
+			&-#{$folder} {
+				background-color: $color;
+			}
+		}
+	}
+
+	&-categories {
+		li {
+			padding: 4px 0;
+		}
+
+		@each $categories, $color in $categories-colors {
+			&-#{$categories} {
+				i {
+					color: $color;
+				}
+			}
+		}
+	}
+
+	&-labels {
+		font-size: 0.8rem;
+
+		button {
+			margin: 0px 5px 5px 0px;
+		}
+	}
+}

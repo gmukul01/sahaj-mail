@@ -15,10 +15,10 @@ export const fetchEmails = actionCreator(FETCH_EMAILS, 'folder', 'pageNumber', '
 export const fetchEmailsSuccess = actionCreator(FETCH_EMAILS_SUCCESS, 'folder', 'emails');
 export const fetchEmailsError = actionCreator(FETCH_EMAILS_ERROR, 'folder', 'errorMessage');
 
-export const deleteEmails = actionCreator(DELETE_EMAILS, 'folder', 'emails', 'pageNumber', 'emailsPerPage');
+export const deleteEmails = actionCreator(DELETE_EMAILS, 'folder', 'emails', 'pageNumber', 'emailsPerPage', 'totalEmails', 'totalUnread');
 export const deleteEmailsSuccess = actionCreator(DELETE_EMAILS_SUCCESS, 'folder');
 export const deleteEmailsError = actionCreator(DELETE_EMAILS_ERROR, 'folder', 'errorMessage');
 
-export const readEmails = actionCreator(READ_EMAILS, 'folder', 'emails', 'pageNumber', 'emailsPerPage');
+export const readEmails = actionCreator(READ_EMAILS, 'folder', 'emails', 'pageNumber', 'emailsPerPage', 'totalEmails', 'totalUnread');
 export const readEmailsSuccess = actionCreator(READ_EMAILS_SUCCESS, 'folder');
 export const readEmailsError = actionCreator(READ_EMAILS_ERROR, 'folder', 'errorMessage');

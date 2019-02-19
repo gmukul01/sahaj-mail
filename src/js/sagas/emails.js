@@ -2,6 +2,7 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 
 import { FETCH_EMAILS, DELETE_EMAILS, READ_EMAILS } from 'constants/actionTypes';
 import { fetchEmailsSuccess, fetchEmailsError, fetchEmails } from 'actions/emails';
+import { fetchInboxDetails } from 'actions/inbox';
 import { loadState } from 'util/localStorage';
 import fetch from 'util/fetch';
 import * as URL from 'constants/urls';
@@ -19,9 +20,9 @@ export function* fetcEmailsSaga({ folder, pageNumber, emailsPerPage }) {
 	if (error) yield put(fetchEmailsError(folder, error.message));
 }
 
-export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage }) {
+export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage, totalEmails, totalUnread }) {
 	const {
-		user: { accessToken }
+		user: { id, email, accessToken }
 	} = loadState();
 	for (let id of emails) {
 		yield call(fetch, {
@@ -31,12 +32,26 @@ export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage })
 		});
 	}
 
+	yield call(fetch, {
+		url: `${URL.INBOX_DETAILS}/${id}`,
+		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
+		method: 'put',
+		data: {
+			id,
+			email,
+			totalEmails,
+			totalUnread
+		}
+	});
+
+	yield put(fetchInboxDetails());
+
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }
 
-export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage }) {
+export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage, totalEmails, totalUnread }) {
 	const {
-		user: { accessToken }
+		user: { id, email, accessToken }
 	} = loadState();
 
 	for (let emailData of emails) {
@@ -47,6 +62,20 @@ export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage }) {
 			data: emailData
 		});
 	}
+
+	yield call(fetch, {
+		url: `${URL.INBOX_DETAILS}/${id}`,
+		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
+		method: 'put',
+		data: {
+			id,
+			email,
+			totalEmails,
+			totalUnread: totalUnread
+		}
+	});
+
+	yield put(fetchInboxDetails());
 
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }

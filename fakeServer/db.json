@@ -48,11 +48,13 @@
 	],
 	"inbox": [
 		{
+			"id": 231,
 			"email": "test1@email.com",
 			"totalEmails": 1,
 			"totalUnread": 1
 		},
 		{
+			"id": 232,
 			"email": "test2@email.com",
 			"totalEmails": 2,
 			"totalUnread": 1

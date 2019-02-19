@@ -20,5 +20,9 @@ export const saveState = state => {
 	}
 };
 
-const accessToken = loadState().user.accessToken;
-export const requestAuthHeaders = () => ({ AUTHORIZATION: `Bearer ${accessToken}` });
+export const requestAuthHeaders = () => {
+	const accessToken = loadState().user.accessToken;
+	return {
+		AUTHORIZATION: `Bearer ${accessToken}`
+	};
+};
