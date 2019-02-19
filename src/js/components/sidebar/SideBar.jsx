@@ -1,6 +1,7 @@
 import React from 'react';
+import Profile from 'containers/Profile';
 
-const SideBar = ({ handleSidebarOpen }) => {
+const SideBar = ({ sidebarState, handleSidebarOpen }) => {
 	const sidebarIcons = [
 		{ iconType: 'fa-th-large', name: 'Dashboard', isActive: false },
 		{ iconType: 'far fa-gem', name: 'Layout', isActive: false },
@@ -18,7 +19,7 @@ const SideBar = ({ handleSidebarOpen }) => {
 
 	return (
 		<section className="sidebar" onClick={handleSidebarOpen}>
-			<button className="sidebar-row logo">IN+</button>
+			<button className="sidebar-row logo">{!sidebarState ? 'IN +' : <Profile />}</button>
 			{sidebarIcons.map((icon, index) => (
 				<div className={`sidebar-row ${icon.isActive ? 'active' : ''}`} key={`${icon.iconType}${index}`}>
 					<button>

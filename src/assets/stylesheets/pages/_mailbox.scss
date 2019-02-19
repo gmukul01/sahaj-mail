@@ -17,13 +17,7 @@
 
 	&.sidebar-open {
 		grid-template-columns: 5fr 5fr 20fr;
-
-		.sidebar-row {
-			.sidebar-dropdown,
-			p {
-				display: inline-block;
-			}
-		}
+		@include sidebar-open();
 	}
 
 	.sidebar {

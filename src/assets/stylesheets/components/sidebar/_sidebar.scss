@@ -16,10 +16,7 @@
 		.sidebar-dropdown,
 		p {
 			display: none;
-		}
-
-		p {
-			margin: 0px 10px;
+			margin: 0px;
 		}
 
 		&.active {
@@ -35,7 +32,7 @@
 	}
 
 	button.logo {
-		font-weight: 500;
+		font-weight: 700;
 		color: $sidebar-icon-active-color;
 		background-color: $sidebar-icon-active-background-color;
 	}
@@ -53,5 +50,23 @@
 			color: $sidebar-icon-color;
 			font-size: 1rem;
 		}
+	}
+}
+
+@mixin sidebar-open {
+	.sidebar-row {
+		button {
+			i {
+				margin-right: 10px;
+			}
+		}
+		.sidebar-dropdown,
+		p {
+			display: inline-block;
+		}
+	}
+	button.logo {
+		flex: 4;
+		max-height: 200px;
 	}
 }

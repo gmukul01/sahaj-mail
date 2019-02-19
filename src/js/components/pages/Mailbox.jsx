@@ -6,14 +6,14 @@ import Header from 'components/header/Header';
 import Inbox from 'containers/inbox/Inbox';
 import MenuBar from 'containers/menubar/MenuBar';
 
-const Mailbox = props => {
+const Mailbox = () => {
 	const [sidebarState, setSidebarState] = useState(false),
 		handleSidebarOpen = () => setSidebarState(!sidebarState),
 		mailBoxClass = classNames('mailbox', { 'sidebar-open': sidebarState });
 
 	return (
 		<div className={mailBoxClass}>
-			<SideBar handleSidebarOpen={handleSidebarOpen} />
+			<SideBar sidebarState={sidebarState} handleSidebarOpen={handleSidebarOpen} />
 			<Header />
 			<MenuBar />
 			<Inbox />
