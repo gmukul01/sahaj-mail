@@ -14,9 +14,7 @@ const Modal = props => {
 						×
 					</button>
 				</div>
-				<div className="modal-body">
-					<p>{props.children}</p>
-				</div>
+				<div className="modal-body">{props.children}</div>
 				<div className="modal-footer">
 					<button className="button-solid" onClick={onConfirmModal}>
 						{confirmText}
