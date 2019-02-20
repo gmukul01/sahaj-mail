@@ -20,9 +20,9 @@ export function* fetcEmailsSaga({ folder, pageNumber, emailsPerPage }) {
 	if (error) yield put(fetchEmailsError(folder, error.message));
 }
 
-export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage, totalEmails, totalUnread }) {
+export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage }) {
 	const {
-		user: { id, email, accessToken }
+		user: { accessToken }
 	} = loadState();
 	for (let id of emails) {
 		yield call(fetch, {
@@ -31,58 +31,29 @@ export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage, t
 			method: 'delete'
 		});
 	}
-
-	yield call(fetch, {
-		url: `${URL.INBOX_DETAILS}/${id}`,
-		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-		method: 'put',
-		data: {
-			id,
-			email,
-			totalEmails,
-			totalUnread
-		}
-	});
-
 	yield put(fetchInboxDetails());
-
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }
 
-export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage, totalEmails, totalUnread }) {
+export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage }) {
 	const {
-		user: { id, email, accessToken }
+		user: { accessToken }
 	} = loadState();
 
-	for (let emailData of emails) {
+	for (let id of emails) {
 		yield call(fetch, {
-			url: `${URL.EMAILS[folder.toUpperCase()]}/${emailData.id}`,
+			url: `${URL.EMAILS[`${folder.toUpperCase()}_READ`]}/${id}`,
 			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-			method: 'put',
-			data: emailData
+			method: 'put'
 		});
 	}
-
-	yield call(fetch, {
-		url: `${URL.INBOX_DETAILS}/${id}`,
-		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-		method: 'put',
-		data: {
-			id,
-			email,
-			totalEmails,
-			totalUnread: totalUnread
-		}
-	});
-
 	yield put(fetchInboxDetails());
-
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }
 
-export function* sendEmailSaga({ emailDetails, folder, pageNumber, emailsPerPage, totalEmails, totalUnread }) {
+export function* sendEmailSaga({ emailDetails, folder, pageNumber, emailsPerPage }) {
 	const {
-		user: { id, email, accessToken }
+		user: { accessToken }
 	} = loadState();
 
 	yield call(fetch, {
@@ -91,45 +62,15 @@ export function* sendEmailSaga({ emailDetails, folder, pageNumber, emailsPerPage
 		method: 'post',
 		data: emailDetails
 	});
-
-	if (emailDetails.to === email) {
-		yield call(fetch, {
-			url: `${URL.INBOX_DETAILS}/${id}`,
-			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-			method: 'put',
-			data: {
-				id,
-				email,
-				totalEmails: totalEmails + 1,
-				totalUnread: totalUnread + 1
-			}
-		});
-	} else {
-		const { response } = yield call(fetch, {
-			url: `${URL.INBOX_DETAILS}?email=${emailDetails.to}`,
-			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-			method: 'get'
-		});
-
-		const { id, email, totalEmails, totalUnread } = response[0];
-		yield call(fetch, {
-			url: `${URL.INBOX_DETAILS}/${id}`,
-			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
-			method: 'put',
-			data: {
-				id,
-				email,
-				totalEmails: totalEmails + 1,
-				totalUnread: totalUnread + 1
-			}
-		});
-	}
-
 	yield put(fetchInboxDetails());
-
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }
 
 export default function* inboxSaga() {
-	yield all([takeLatest(FETCH_EMAILS, fetcEmailsSaga), takeLatest(DELETE_EMAILS, deleteEmailsSaga), takeLatest(READ_EMAILS, readEmailSaga), takeLatest(SEND_EMAIL, sendEmailSaga)]);
+	yield all([
+		takeLatest(FETCH_EMAILS, fetcEmailsSaga),
+		takeLatest(DELETE_EMAILS, deleteEmailsSaga),
+		takeLatest(READ_EMAILS, readEmailSaga),
+		takeLatest(SEND_EMAIL, sendEmailSaga)
+	]);
 }
