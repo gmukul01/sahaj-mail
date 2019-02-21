@@ -6,7 +6,7 @@ import Loginpage from 'components/pages/Loginpage';
 const mapStateToProps = ({ user: { name, isLoading, errorMessage } }) => ({
 	isLoading,
 	errorMessage,
-	isUserLoggedIn: name
+	isUserLoggedIn: name ? true : false
 });
 
 export default connect(

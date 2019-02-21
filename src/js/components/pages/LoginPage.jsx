@@ -42,13 +42,13 @@ export const Loginpage = props => {
 					<button type="submit">Login</button>
 				</form>
 			)}
-			{errorMessage && <p className="error"> {errorMessage}</p>}
+			{errorMessage && <p className="error">{errorMessage}</p>}
 		</section>
 	);
 };
 
 Loginpage.propTypes = {
-	isUserLoggedIn: PropTypes.string,
+	isUserLoggedIn: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	fetchUserDetails: PropTypes.func.isRequired,
 	location: PropTypes.object.isRequired
