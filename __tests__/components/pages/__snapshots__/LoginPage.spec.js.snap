@@ -30,5 +30,3 @@ exports[`LoginPage Component should match snapshot 1`] = `
   </section>
 </div>
 `;
-
-exports[`LoginPage Component should match snapshot when isUserLoggedIn 1`] = `<div />`;
