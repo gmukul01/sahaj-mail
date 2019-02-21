@@ -6,7 +6,7 @@ import fetch from 'util/fetch';
 import * as URL from 'constants/urls';
 import userSaga, { fetchUserDetails } from 'sagas/user';
 
-describe('User saga', () => {
+describe('Inbox saga', () => {
 	const response = {
 			data: { user: { email: 'dummyUser' } }
 		},
