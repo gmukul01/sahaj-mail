@@ -66,7 +66,7 @@ export function* sendEmailSaga({ emailDetails, folder, pageNumber, emailsPerPage
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
 }
 
-export default function* inboxSaga() {
+export default function* emailSaga() {
 	yield all([
 		takeLatest(FETCH_EMAILS, fetcEmailsSaga),
 		takeLatest(DELETE_EMAILS, deleteEmailsSaga),

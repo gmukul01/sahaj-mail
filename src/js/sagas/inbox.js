@@ -22,6 +22,6 @@ export function* fetcinboxDetails() {
 	}
 }
 
-export default function* emailSaga() {
+export default function* inboxSaga() {
 	yield takeLatest(FETCH_INBOX_DETAILS, fetcinboxDetails);
 }
