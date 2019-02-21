@@ -1,0 +1,778 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuBar Component should call mockSendEmail when sendEmail is called 1`] = `
+<section
+  className="menubar"
+>
+  <button
+    className="button-solid menubar-compose"
+    onClick={[Function]}
+  >
+    Compose Mail
+  </button>
+  <div
+    className="modal"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h3
+          className="title"
+        >
+          New Message
+        </h3>
+        <button
+          className="modal-close"
+          onClick={[Function]}
+        >
+          ×
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <form
+          className="compose-email"
+          onSubmit={[Function]}
+        >
+          <label>
+            To
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter recipient email id"
+            type="text"
+            value=""
+          />
+          <label>
+            Subject
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter subject"
+            type="text"
+            value=""
+          />
+          <label>
+            Body
+          </label>
+          <textarea
+            onChange={[Function]}
+            placeholder="Enter message"
+            value=""
+          />
+          <button
+            className="button-solid"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="menubar-folders"
+  >
+    <h5>
+      FOLDERS
+    </h5>
+    <ul>
+      <li>
+        <span>
+          <i
+            className="fas fa-inbox"
+          />
+          Inbox
+        </span>
+        <button
+          className="menubar-folders-inbox chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-envelope"
+          />
+          Send Email
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-certificate"
+          />
+          Important
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-file-alt"
+          />
+          Drafts
+        </span>
+        <button
+          className="menubar-folders-drafts chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-trash-alt"
+          />
+          Trash
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-categories"
+  >
+    <h5>
+      CATEGORIES
+    </h5>
+    <ul>
+      <li
+        className="menubar-categories-work"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Work
+      </li>
+      <li
+        className="menubar-categories-documents"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Documents
+      </li>
+      <li
+        className="menubar-categories-social"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Social
+      </li>
+      <li
+        className="menubar-categories-advertising"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Advertising
+      </li>
+      <li
+        className="menubar-categories-clients"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Clients
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-labels"
+  >
+    <h5>
+      LABELS
+    </h5>
+    <div>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Film
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Photography
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Music
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Holidays
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Children
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Home
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Work
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Family
+      </button>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`MenuBar Component should match snapshot 1`] = `
+<section
+  className="menubar"
+>
+  <button
+    className="button-solid menubar-compose"
+    onClick={[Function]}
+  >
+    Compose Mail
+  </button>
+  <div
+    className="modal"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h3
+          className="title"
+        >
+          New Message
+        </h3>
+        <button
+          className="modal-close"
+          onClick={[Function]}
+        >
+          ×
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <form
+          className="compose-email"
+          onSubmit={[Function]}
+        >
+          <label>
+            To
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter recipient email id"
+            type="text"
+            value=""
+          />
+          <label>
+            Subject
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter subject"
+            type="text"
+            value=""
+          />
+          <label>
+            Body
+          </label>
+          <textarea
+            onChange={[Function]}
+            placeholder="Enter message"
+            value=""
+          />
+          <button
+            className="button-solid"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="menubar-folders"
+  >
+    <h5>
+      FOLDERS
+    </h5>
+    <ul>
+      <li>
+        <span>
+          <i
+            className="fas fa-inbox"
+          />
+          Inbox
+        </span>
+        <button
+          className="menubar-folders-inbox chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-envelope"
+          />
+          Send Email
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-certificate"
+          />
+          Important
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-file-alt"
+          />
+          Drafts
+        </span>
+        <button
+          className="menubar-folders-drafts chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-trash-alt"
+          />
+          Trash
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-categories"
+  >
+    <h5>
+      CATEGORIES
+    </h5>
+    <ul>
+      <li
+        className="menubar-categories-work"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Work
+      </li>
+      <li
+        className="menubar-categories-documents"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Documents
+      </li>
+      <li
+        className="menubar-categories-social"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Social
+      </li>
+      <li
+        className="menubar-categories-advertising"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Advertising
+      </li>
+      <li
+        className="menubar-categories-clients"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Clients
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-labels"
+  >
+    <h5>
+      LABELS
+    </h5>
+    <div>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Film
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Photography
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Music
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Holidays
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Children
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Home
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Work
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Family
+      </button>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`MenuBar Component should set new value when onChange is called 1`] = `
+<section
+  className="menubar"
+>
+  <button
+    className="button-solid menubar-compose"
+    onClick={[Function]}
+  >
+    Compose Mail
+  </button>
+  <div
+    className="modal"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h3
+          className="title"
+        >
+          New Message
+        </h3>
+        <button
+          className="modal-close"
+          onClick={[Function]}
+        >
+          ×
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <form
+          className="compose-email"
+          onSubmit={[Function]}
+        >
+          <label>
+            To
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter recipient email id"
+            type="text"
+            value=""
+          />
+          <label>
+            Subject
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Enter subject"
+            type="text"
+            value=""
+          />
+          <label>
+            Body
+          </label>
+          <textarea
+            onChange={[Function]}
+            placeholder="Enter message"
+            value=""
+          />
+          <button
+            className="button-solid"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <div
+    className="menubar-folders"
+  >
+    <h5>
+      FOLDERS
+    </h5>
+    <ul>
+      <li>
+        <span>
+          <i
+            className="fas fa-inbox"
+          />
+          Inbox
+        </span>
+        <button
+          className="menubar-folders-inbox chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-envelope"
+          />
+          Send Email
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-certificate"
+          />
+          Important
+        </span>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-file-alt"
+          />
+          Drafts
+        </span>
+        <button
+          className="menubar-folders-drafts chips-btn"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <span>
+          <i
+            className="fas fa-trash-alt"
+          />
+          Trash
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-categories"
+  >
+    <h5>
+      CATEGORIES
+    </h5>
+    <ul>
+      <li
+        className="menubar-categories-work"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Work
+      </li>
+      <li
+        className="menubar-categories-documents"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Documents
+      </li>
+      <li
+        className="menubar-categories-social"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Social
+      </li>
+      <li
+        className="menubar-categories-advertising"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Advertising
+      </li>
+      <li
+        className="menubar-categories-clients"
+      >
+        <i
+          className="fas fa-circle"
+        />
+        Clients
+      </li>
+    </ul>
+  </div>
+  <div
+    className="menubar-labels"
+  >
+    <h5>
+      LABELS
+    </h5>
+    <div>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Film
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Photography
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Music
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Holidays
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Children
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Home
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Work
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-tag"
+        />
+        Family
+      </button>
+    </div>
+  </div>
+</section>
+`;
