@@ -14,7 +14,7 @@ const Routes = ({ isUserLoggedIn }) => (
 );
 
 Routes.propTypes = {
-	isUserLoggedIn: PropTypes.string
+	isUserLoggedIn: PropTypes.bool
 };
 
-export default Routes;
+export default React.memo(Routes);

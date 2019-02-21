@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Profile from 'containers/Profile';
 
 const SideBar = ({ sidebarState, handleSidebarOpen }) => {
@@ -31,6 +32,11 @@ const SideBar = ({ sidebarState, handleSidebarOpen }) => {
 			))}
 		</section>
 	);
+};
+
+SideBar.propTypes = {
+	sidebarState: PropTypes.bool,
+	handleSidebarOpen: PropTypes.func
 };
 
 export default React.memo(SideBar);

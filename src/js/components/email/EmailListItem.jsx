@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'components/CheckBox';
 import ReadEmail from './ReadMail';
@@ -31,6 +32,19 @@ const EmailListItem = props => {
 			</div>
 		</>
 	);
+};
+
+EmailListItem.propTypes = {
+	selectedEmails: PropTypes.array,
+	addToSelectedEmails: PropTypes.func,
+	id: PropTypes.number,
+	from: PropTypes.object,
+	subject: PropTypes.string,
+	body: PropTypes.string,
+	isRead: PropTypes.bool,
+	category: PropTypes.string,
+	hasAttachment: PropTypes.bool,
+	timestamp: PropTypes.string
 };
 
 export default React.memo(EmailListItem);

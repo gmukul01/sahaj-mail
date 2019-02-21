@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Folders = ({ totalUnread }) => {
 	const data = [
@@ -18,7 +19,9 @@ const Folders = ({ totalUnread }) => {
 							<i className={`fas fa-${folder.icon}`} />
 							{folder.name}
 						</span>
-						{folder.count && folder.count !== 0 ? <button className={`menubar-folders-${folder.name.toLowerCase()} chips-btn`}>{folder.count}</button> : null}
+						{folder.count && folder.count !== 0 ? (
+							<button className={`menubar-folders-${folder.name.toLowerCase()} chips-btn`}>{folder.count}</button>
+						) : null}
 					</li>
 				))}
 			</ul>
@@ -26,4 +29,8 @@ const Folders = ({ totalUnread }) => {
 	);
 };
 
-export default Folders;
+Folders.propTypes = {
+	totalUnread: PropTypes.number
+};
+
+export default React.memo(Folders);

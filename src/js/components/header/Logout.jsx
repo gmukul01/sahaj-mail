@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Logout = ({ onLogoutClick }) => {
 	return (
@@ -7,6 +8,9 @@ const Logout = ({ onLogoutClick }) => {
 			Logout
 		</button>
 	);
+};
+Logout.propTypes = {
+	onLogoutClick: PropTypes.func
 };
 
 export default React.memo(Logout);

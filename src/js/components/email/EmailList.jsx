@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import formatTime from 'util/formatTime';
 import EmailListItem from './EmailListItem';
@@ -11,4 +12,11 @@ const EmailList = ({ onRead, emails, selectedEmails, addToSelectedEmails }) => {
 	return <div className="email-list">{emailList}</div>;
 };
 
-export default EmailList;
+EmailList.propTypes = {
+	onRead: PropTypes.func.isRequired,
+	emails: PropTypes.array.isRequired,
+	selectedEmails: PropTypes.array.isRequired,
+	addToSelectedEmails: PropTypes.func.isRequired
+};
+
+export default React.memo(EmailList);

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import Folders from './Folders';
 import Labels from './Labels';
 import Categories from './Categories';
@@ -20,6 +22,11 @@ const MenuBar = ({ totalUnread, sendEmail }) => {
 			<Labels />
 		</section>
 	);
+};
+
+MenuBar.propTyoes = {
+	totalUnread: PropTypes.number,
+	sendEmail: PropTypes.func
 };
 
 export default React.memo(MenuBar);

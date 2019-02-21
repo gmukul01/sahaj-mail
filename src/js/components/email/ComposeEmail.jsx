@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Modal from 'components/Modal';
 import { useFormInput } from 'effects/useFormInput';
@@ -54,4 +55,10 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 	);
 };
 
-export default ComposeEmail;
+ComposeEmail.propTypes = {
+	showModal: PropTypes.bool,
+	onCloseModal: PropTypes.func,
+	sendEmail: PropTypes.func
+};
+
+export default React.memo(ComposeEmail);

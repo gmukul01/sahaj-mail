@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ActionBar = ({ onRefresh, onDelete, onRead }) => (
 	<div className="inbox-actionbar">
@@ -28,5 +29,11 @@ const ActionBar = ({ onRefresh, onDelete, onRead }) => (
 		</div>
 	</div>
 );
+
+ActionBar.propTypes = {
+	onRefresh: PropTypes.func,
+	onDelete: PropTypes.func,
+	onRead: PropTypes.func
+};
 
 export default React.memo(ActionBar);

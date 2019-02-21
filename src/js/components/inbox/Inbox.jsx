@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import TopBar from './TopBar';
 import EmailList from 'components/email/EmailList';
@@ -35,6 +36,15 @@ const Inbox = props => {
 			<EmailList {...{ selectedEmails, addToSelectedEmails, onRead: readEmails, emails }} />
 		</section>
 	);
+};
+
+Inbox.propTypes = {
+	totalEmails: PropTypes.number,
+	emails: PropTypes.array,
+	fetchEmails: PropTypes.func,
+	deleteEmails: PropTypes.func,
+	readEmails: PropTypes.func,
+	fetchInboxDetails: PropTypes.func
 };
 
 export default React.memo(Inbox);
