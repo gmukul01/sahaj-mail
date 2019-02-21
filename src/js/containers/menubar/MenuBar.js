@@ -25,7 +25,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 				...emailDetais,
 				from: { name, email },
 				isRead: false,
-				timestamp: Date.now(),
 				hasAttachment: false
 			};
 			sendEmail(newEmailDetails, 'inbox', pageNumber, emailsPerPage);

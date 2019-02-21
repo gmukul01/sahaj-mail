@@ -1,42 +1,46 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-import { FETCH_INBOX_DETAILS } from 'constants/actionTypes';
-import { fetchInboxDetailsSuccess } from 'actions/inbox';
+import { FETCH_USER_DETAILS } from 'constants/actionTypes';
+import { fetchUserDetailsSuccess, fetchUserDetailsFailure } from 'actions/user';
 import fetch from 'util/fetch';
-import { saveState } from 'util/localStorage';
 import * as URL from 'constants/urls';
-import inboxSaga, { fetcinboxDetails } from 'sagas/inbox';
+import userSaga, { fetchUserDetails } from 'sagas/user';
 
-describe('User saga', () => {
-	beforeAll(() => {
-		saveState({
-			user: {
-				id: 321,
-				name: 'Dummy Name',
-				email: 'dummy@email.com',
-				accessToken: 'dummyAccessToken'
-			}
-		});
+describe('Inbox saga', () => {
+	const response = {
+			data: { user: { email: 'dummyUser' } }
+		},
+		data = {
+			email: 'dummyemail',
+			password: 'dummypassword'
+		};
+
+	it('should listen FETCH_USER_DETAILS', () => {
+		const gen = userSaga();
+		expect(gen.next().value).toEqual(takeLatest(FETCH_USER_DETAILS, fetchUserDetails));
 	});
 
-	afterAll(() => {
-		saveState(undefined);
-	});
-
-	it('should listen FETCH_INBOX_DETAILS', () => {
-		const gen = inboxSaga();
-		expect(gen.next().value).toEqual(takeLatest(FETCH_INBOX_DETAILS, fetcinboxDetails));
-	});
-
-	it('should dispatch fetchInboxDetailsSuccess action when fetcinboxDetails saga is called', () => {
-		const gen = fetcinboxDetails();
+	it('should dispatch fetchUserDetailsSuccess action when fetchUserDetails is called', () => {
+		const gen = fetchUserDetails(data);
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.INBOX_DETAILS}`,
-				headers: { AUTHORIZATION: 'Bearer dummyAccessToken' },
-				method: 'get'
+				url: URL.USER_DETAILS,
+				method: 'post',
+				data
 			})
 		);
-		expect(gen.next({ response: [{ email: 'dummyEmail', totalEmails: 1 }] }).value).toEqual(put(fetchInboxDetailsSuccess({ totalEmails: 1 })));
+		expect(gen.next({ response }).value).toEqual(put(fetchUserDetailsSuccess(response)));
+	});
+
+	it('should dispatch fetchUserDetailsFailure action when fetchUserDetails saga throws error', () => {
+		const gen = fetchUserDetails(data);
+		expect(gen.next().value).toEqual(
+			call(fetch, {
+				url: URL.USER_DETAILS,
+				method: 'post',
+				data
+			})
+		);
+		expect(gen.next({ error: { message: 'dummy error message' } }).value).toEqual(put(fetchUserDetailsFailure('dummy error message')));
 	});
 });

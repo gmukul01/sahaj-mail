@@ -65,6 +65,7 @@ server.post('/api/emails', async (req, res, next) => {
 	++inbox.totalEmails;
 	++inbox.totalUnread;
 	await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db));
+	req.body = { ...req.body, timestamp: Date.now() };
 	next();
 });
 

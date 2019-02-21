@@ -45,7 +45,6 @@ describe('MenuBar Container', () => {
 				...emailDatails,
 				from: { ...initialState.user },
 				isRead: false,
-				timestamp: Date.now(),
 				hasAttachment: false
 			};
 		menubar.prop('sendEmail')(emailDatails);

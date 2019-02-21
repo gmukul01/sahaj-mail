@@ -1,7 +1,7 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
 import { FETCH_EMAILS, DELETE_EMAILS, READ_EMAILS, SEND_EMAIL } from 'constants/actionTypes';
-import { fetchEmailsSuccess, fetchEmails } from 'actions/emails';
+import { fetchEmailsSuccess, fetchEmailsError, fetchEmails } from 'actions/emails';
 import { fetchInboxDetails } from 'actions/inbox';
 import fetch from 'util/fetch';
 import { saveState } from 'util/localStorage';
@@ -47,6 +47,18 @@ describe('Email saga', () => {
 			})
 		);
 		expect(gen.next({ response: 'dummyResponse' }).value).toEqual(put(fetchEmailsSuccess('inbox', 'dummyResponse')));
+	});
+
+	it('should dispatch fetchEmailsError action when fetcEmailsSaga throws error', () => {
+		const gen = fetcEmailsSaga({ folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
+		expect(gen.next().value).toEqual(
+			call(fetch, {
+				url: `${URL.EMAILS['inbox'.toUpperCase()]}?to=dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
+				method: 'get'
+			})
+		);
+		expect(gen.next({ error: { message: 'dummy Error Response' } }).value).toEqual(put(fetchEmailsError('inbox', 'dummy Error Response')));
 	});
 
 	it('should dispatch fetchInboxDetails and fetchEmails action when deleteEmailsSaga is called', () => {

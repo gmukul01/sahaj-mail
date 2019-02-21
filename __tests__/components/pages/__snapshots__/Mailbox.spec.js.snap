@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Mailbox Component should call mockSendEmail when sendEmail is called 1`] = `ReactWrapper {}`;
-
 exports[`Mailbox Component should match snapshot 1`] = `
 <div
   className="mailbox"
