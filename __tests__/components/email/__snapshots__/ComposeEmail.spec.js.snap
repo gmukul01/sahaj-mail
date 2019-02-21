@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckBox Component should match snapshot 1`] = `
-Array [
-  <input
-    className="styled-checkbox"
-    defaultChecked={true}
-    id="checkbox-1"
-    onChange={[MockFunction]}
-    type="checkbox"
-    value={1}
-  />,
-  <label
-    htmlFor="checkbox-1"
-  />,
-]
-`;
-
 exports[`ComposeEmail Component should match snapshot 1`] = `
 <div>
   <div
@@ -77,36 +61,5 @@ exports[`ComposeEmail Component should match snapshot 1`] = `
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`LoginPage Component should match snapshot 1`] = `
-<div>
-  <section
-    class="login"
-  >
-    <form
-      class="login-card"
-    >
-      <h1>
-        Sign In
-      </h1>
-      <input
-        placeholder="Username"
-        type="text"
-        value=""
-      />
-      <input
-        placeholder="Password"
-        type="password"
-        value=""
-      />
-      <button
-        type="submit"
-      >
-        Login
-      </button>
-    </form>
-  </section>
 </div>
 `;
