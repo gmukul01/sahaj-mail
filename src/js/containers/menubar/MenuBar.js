@@ -21,14 +21,14 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 		...dispatchProps,
 		...ownProps,
 		sendEmail(emailDetais) {
-			const newemailDetails = {
+			const newEmailDetails = {
 				...emailDetais,
 				from: { name, email },
 				isRead: false,
 				timestamp: Date.now(),
 				hasAttachment: false
 			};
-			sendEmail(newemailDetails, 'inbox', pageNumber, emailsPerPage);
+			sendEmail(newEmailDetails, 'inbox', pageNumber, emailsPerPage);
 		}
 	};
 };
