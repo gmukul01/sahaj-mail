@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 const Modal = props => {
@@ -18,6 +20,12 @@ const Modal = props => {
 			</div>
 		</div>
 	);
+};
+
+Modal.propTypes = {
+	showModal: PropTypes.bool,
+	onCloseModal: PropTypes.func,
+	header: PropTypes.string
 };
 
 export default React.memo(Modal);

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component should match snapshot 1`] = `
+<div
+  className="profile"
+>
+  <div
+    className="avatar"
+  >
+    <img
+      alt="User Pic"
+      src="http://i.pravatar.cc/150?img=66"
+    />
+  </div>
+  <p>
+    DummyName
+  </p>
+</div>
+`;

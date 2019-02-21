@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Component should match snapshot 1`] = `
+<div
+  className="avatar"
+>
+  <img
+    alt="User Pic"
+    src="http://i.pravatar.cc/150?img=66"
+  />
+</div>
+`;
+
+exports[`CheckBox Component should match snapshot 1`] = `
+Array [
+  <input
+    className="styled-checkbox"
+    defaultChecked={true}
+    id="checkbox-1"
+    onChange={[MockFunction]}
+    type="checkbox"
+    value={1}
+  />,
+  <label
+    htmlFor="checkbox-1"
+  />,
+]
+`;
+
+exports[`CheckBox Component should match snapshot 2`] = `
+Array [
+  <input
+    className="styled-checkbox"
+    defaultChecked={true}
+    id="checkbox-1"
+    onChange={[MockFunction]}
+    type="checkbox"
+    value={1}
+  />,
+  <label
+    htmlFor="checkbox-1"
+  />,
+]
+`;

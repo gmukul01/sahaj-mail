@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Logout from './Logout';
 import Badge from '../Badge';
 
@@ -14,6 +16,11 @@ const Info = ({ onLogoutClick, totalUnread }) => {
 			<Logout {...{ onLogoutClick }} />
 		</div>
 	);
+};
+
+Info.propTypes = {
+	onLogoutClick: PropTypes.func.isRequired,
+	totalUnread: PropTypes.number
 };
 
 export default Info;

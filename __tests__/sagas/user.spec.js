@@ -29,6 +29,6 @@ describe('User saga', () => {
 				data
 			})
 		);
-		expect(gen.next({ response }).value).toEqual(put(fetchUserDetailsSuccess(response.data)));
+		expect(gen.next({ response }).value).toEqual(put(fetchUserDetailsSuccess(response)));
 	});
 });

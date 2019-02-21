@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge Component should match snapshot when badgeContent is non zero 1`] = `
+<button
+  className="badge-email"
+>
+  <i
+    className="fas fa-bell"
+  />
+  <span
+    className="badge"
+  >
+    4
+  </span>
+</button>
+`;
+
+exports[`Badge Component should match snapshot when badgeContent is zero 1`] = `
+<button
+  className="badge-email"
+>
+  <i
+    className="fas fa-bell"
+  />
+</button>
+`;

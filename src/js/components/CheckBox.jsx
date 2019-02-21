@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CheckBox = ({ id, selected, onChange }) => (
 	<>
@@ -7,4 +8,10 @@ const CheckBox = ({ id, selected, onChange }) => (
 	</>
 );
 
-export default CheckBox;
+CheckBox.propTypes = {
+	id: PropTypes.number,
+	selected: PropTypes.bool,
+	onChange: PropTypes.func
+};
+
+export default React.memo(CheckBox);

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Avatar from 'components/Avatar';
 
 const Profile = ({ userName }) => (
@@ -7,5 +9,9 @@ const Profile = ({ userName }) => (
 		<p>{userName}</p>
 	</div>
 );
+
+Profile.propTypes = {
+	userName: PropTypes.string
+};
 
 export default React.memo(Profile);

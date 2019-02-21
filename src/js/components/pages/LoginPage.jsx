@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-import { useFormInput } from 'effects/useFormInput';
+import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
+
+import { useFormInput } from 'effects/useFormInput';
 
 export const Loginpage = props => {
 	const { setValue: setEmail, ...email } = useFormInput(''),
@@ -45,4 +47,11 @@ export const Loginpage = props => {
 	);
 };
 
-export default Loginpage;
+Loginpage.propTypes = {
+	isUserLoggedIn: PropTypes.string,
+	isLoading: PropTypes.bool,
+	fetchUserDetails: PropTypes.func.isRequired,
+	location: PropTypes.object.isRequired
+};
+
+export default React.memo(Loginpage);

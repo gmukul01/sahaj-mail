@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox Component should match snapshot 1`] = `
+Array [
+  <input
+    className="styled-checkbox"
+    defaultChecked={true}
+    id="checkbox-1"
+    onChange={[MockFunction]}
+    type="checkbox"
+    value={1}
+  />,
+  <label
+    htmlFor="checkbox-1"
+  />,
+]
+`;
+
+exports[`Modal Component should match snapshot 1`] = `
+<div
+  className="modal open"
+>
+  <div
+    className="modal-content"
+  >
+    <div
+      className="modal-header"
+    >
+      <h3
+        className="title"
+      >
+        Dummy Header
+      </h3>
+      <button
+        className="modal-close"
+      >
+        ×
+      </button>
+    </div>
+    <div
+      className="modal-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`Modal Component should match snapshot when showModal is false 1`] = `
+<div
+  className="modal"
+>
+  <div
+    className="modal-content"
+  >
+    <div
+      className="modal-header"
+    >
+      <h3
+        className="title"
+      >
+        Dummy Header
+      </h3>
+      <button
+        className="modal-close"
+        onClick={[MockFunction]}
+      >
+        ×
+      </button>
+    </div>
+    <div
+      className="modal-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`Modal Component should match snapshot when showModal is true 1`] = `
+<div
+  className="modal open"
+>
+  <div
+    className="modal-content"
+  >
+    <div
+      className="modal-header"
+    >
+      <h3
+        className="title"
+      >
+        Dummy Header
+      </h3>
+      <button
+        className="modal-close"
+        onClick={[MockFunction]}
+      >
+        ×
+      </button>
+    </div>
+    <div
+      className="modal-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`Modal Component should match snapshot when showModal is true 2`] = `
+<div
+  className="modal open"
+>
+  <div
+    className="modal-content"
+  >
+    <div
+      className="modal-header"
+    >
+      <h3
+        className="title"
+      >
+        Dummy Header
+      </h3>
+      <button
+        className="modal-close"
+        onClick={[MockFunction]}
+      >
+        ×
+      </button>
+    </div>
+    <div
+      className="modal-body"
+    />
+  </div>
+</div>
+`;

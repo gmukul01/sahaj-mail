@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import PrivateRoute from './PrivateRoute';
 import Loginpage from 'containers/pages/LoginPage';
@@ -11,5 +12,9 @@ const Routes = ({ isUserLoggedIn }) => (
 		<PrivateRoute path="/" component={Mailbox} isAuthenticated={isUserLoggedIn} />
 	</Switch>
 );
+
+Routes.propTypes = {
+	isUserLoggedIn: PropTypes.string
+};
 
 export default Routes;
