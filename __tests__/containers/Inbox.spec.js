@@ -15,7 +15,24 @@ describe('Inbox Container', () => {
 			pageNumber: 1,
 			totalEmails: 2,
 			emailsPerPage: 20,
-			emails: [{ id: 1, from: 'dummyFrom', isRead: true }, { id: 2, from: 'dummyFrom', isRead: false }]
+			emails: [
+				{
+					id: 1,
+					from: {
+						name: 'dummyFrom1',
+						email: 'dummyFrom1@email.com'
+					},
+					isRead: true
+				},
+				{
+					id: 2,
+					from: {
+						name: 'dummyFrom2',
+						email: 'dummyFrom2@email.com'
+					},
+					isRead: false
+				}
+			]
 		}
 	};
 
@@ -36,25 +53,25 @@ describe('Inbox Container', () => {
 		expect(inbox.prop('emailsPerPage')).toBe(initialState.inbox.emailsPerPage);
 	});
 
-	it('should dispatch fetchInboxDetails action on calling fetchInboxDetails', () => {
+	it('should dispatch fetchInboxDetails action when fetchInboxDetails is called', () => {
 		inbox.prop('fetchInboxDetails')();
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(fetchInboxDetails());
 	});
 
-	it('should dispatch fetchEmails action on calling fetchEmails', () => {
+	it('should dispatch fetchEmails action when fetchEmails is called', () => {
 		inbox.prop('fetchEmails')();
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(fetchEmails('inbox', 1, 20));
 	});
 
-	it('should dispatch deleteEmails action on calling deleteEmails', () => {
+	it('should dispatch deleteEmails action when deleteEmails is called', () => {
 		inbox.prop('deleteEmails')([1, 2]);
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(deleteEmails('inbox', [1, 2], 1, 20));
 	});
 
-	it('should dispatch readEmails action on calling readEmails', () => {
+	it('should dispatch readEmails action when readEmails is called', () => {
 		inbox.prop('readEmails')([1, 2]);
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(readEmails('inbox', [2], 1, 20));
