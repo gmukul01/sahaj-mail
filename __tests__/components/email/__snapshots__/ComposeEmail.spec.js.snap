@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox Component should match snapshot 1`] = `
+Array [
+  <input
+    className="styled-checkbox"
+    defaultChecked={true}
+    id="checkbox-1"
+    onChange={[MockFunction]}
+    type="checkbox"
+    value={1}
+  />,
+  <label
+    htmlFor="checkbox-1"
+  />,
+]
+`;
+
+exports[`ComposeEmail Component should match snapshot 1`] = `
+<div>
+  <div
+    class="modal"
+  >
+    <div
+      class="modal-content"
+    >
+      <div
+        class="modal-header"
+      >
+        <h3
+          class="title"
+        >
+          New Message
+        </h3>
+        <button
+          class="modal-close"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="modal-body"
+      >
+        <form
+          class="compose-email"
+        >
+          <label>
+            To
+          </label>
+          <input
+            placeholder="Enter recipient email id"
+            type="text"
+            value=""
+          />
+          <label>
+            Subject
+          </label>
+          <input
+            placeholder="Enter subject"
+            type="text"
+            value=""
+          />
+          <label>
+            Body
+          </label>
+          <textarea
+            placeholder="Enter message"
+          />
+          <button
+            class="button-solid"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LoginPage Component should match snapshot 1`] = `
+<div>
+  <section
+    class="login"
+  >
+    <form
+      class="login-card"
+    >
+      <h1>
+        Sign In
+      </h1>
+      <input
+        placeholder="Username"
+        type="text"
+        value=""
+      />
+      <input
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </section>
+</div>
+`;

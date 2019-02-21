@@ -32,8 +32,8 @@ const ComposeEmail = ({ showModal, onCloseModal, sendEmail }) => {
 		e.preventDefault();
 
 		if (to.value === '' && body.value === '') setErrorMessage('Please enter details');
-		if (to.value === '') setErrorMessage('Please enter To');
-		else if (body.value === '') setErrorMessage('Please enter Body');
+		else if (to.value === '') setErrorMessage('Please enter recipient email id');
+		else if (body.value === '') setErrorMessage('Please enter message');
 		else onSend();
 	};
 
