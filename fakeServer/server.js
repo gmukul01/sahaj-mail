@@ -54,7 +54,8 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 
 server.get('/api/inbox', async (req, res, next) => {
 	const db = require('./database/inbox.json');
-	res.status(200).jsonp(db.filter(({ email }) => email === req.headers.email));
+	const inbox = db.filter(({ email }) => email === req.headers.email);
+	res.status(200).jsonp(inbox);
 });
 
 server.post('/api/emails', async (req, res, next) => {
