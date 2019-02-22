@@ -1,4 +1,4 @@
 [
-	{ "id": 231, "email": "test1@email.com", "totalEmails": 1, "totalUnread": 0 },
-	{ "id": 232, "email": "test2@email.com", "totalEmails": 2, "totalUnread": 1 }
+	{ "id": 231, "email": "test1@email.com", "totalEmails": 3, "totalUnread": 2 },
+	{ "id": 232, "email": "test2@email.com", "totalEmails": 4, "totalUnread": 3 }
 ]

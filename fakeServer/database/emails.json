@@ -18,6 +18,36 @@
 		{
 			"id": 2,
 			"from": {
+				"name": "Test2 Bansal",
+				"email": "test2@email.com"
+			},
+			"to": "test1@email.com",
+			"category": "Work",
+			"label": "Work",
+			"isRead": false,
+			"subject": "Lorem ipsum dolon noretek imit set",
+			"hasAttachment": true,
+			"timestamp": 1550421231047,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+		},
+		{
+			"id": 3,
+			"from": {
+				"name": "Test2 Bansal",
+				"email": "test2@email.com"
+			},
+			"to": "test1@email.com",
+			"category": "Documents",
+			"label": "Family",
+			"isRead": false,
+			"subject": "Lorem ipsum subject adipiscing elit",
+			"hasAttachment": false,
+			"timestamp": 1550421231048,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+		},
+		{
+			"id": 4,
+			"from": {
 				"name": "Test1",
 				"email": "test1email.com"
 			},
@@ -31,7 +61,7 @@
 			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 		},
 		{
-			"id": 3,
+			"id": 5,
 			"from": {
 				"name": "Test1",
 				"email": "test1@email.com"
@@ -44,6 +74,36 @@
 			"subject": "Lorem ipsum dolon noretek imit set",
 			"hasAttachment": true,
 			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+		},
+		{
+			"id": 6,
+			"from": {
+				"name": "Test1",
+				"email": "test1@email.com"
+			},
+			"to": "test2@email.com",
+			"category": "Documents",
+			"label": "Music",
+			"isRead": false,
+			"timestamp": 1549989305338,
+			"subject": "Lorem ipsum subject",
+			"hasAttachment": false,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ipsum erat, pulvinar sit amet magna quis, vestibulum sagittis metus. Aenean tristique ex a metus convallis, sed congue arcu mollis. Cras eget porta diam. Vivamus dictum condimentum mauris in scelerisque. Pellentesque eu est sed nulla tempus pharetra vitae vel magna. Sed non accumsan tellus, ut rutrum ipsum. Proin condimentum dapibus ex aliquet euismod. In lobortis turpis enim, non molestie tellus consequat sed. Aliquam eu nibh sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur dapibus maximus orci sed dignissim. Vestibulum a leo sed nisi tristique facilisis et id augue. Quisque dapibus erat in ipsum lacinia maximus. Aliquam fermentum rhoncus mauris. Ut maximus nibh in varius tincidunt."
+		},
+		{
+			"id": 7,
+			"from": {
+				"name": "Test1",
+				"email": "test1@email.com"
+			},
+			"to": "test2@email.com",
+			"category": "Social",
+			"label": "Music",
+			"isRead": false,
+			"timestamp": 1549989305331,
+			"subject": "Lorem ipsum subject adipiscing elit",
+			"hasAttachment": false,
+			"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ipsum erat, pulvinar sit amet magna quis, vestibulum sagittis metus. Aenean tristique ex a metus convallis, sed congue arcu mollis. Cras eget porta diam. Vivamus dictum condimentum mauris in scelerisque. Pellentesque eu est sed nulla tempus pharetra vitae vel magna. Sed non accumsan tellus, ut rutrum ipsum. Proin condimentum dapibus ex aliquet euismod. In lobortis turpis enim, non molestie tellus consequat sed. Aliquam eu nibh sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur dapibus maximus orci sed dignissim. Vestibulum a leo sed nisi tristique facilisis et id augue. Quisque dapibus erat in ipsum lacinia maximus. Aliquam fermentum rhoncus mauris. Ut maximus nibh in varius tincidunt."
 		}
 	]
 }
