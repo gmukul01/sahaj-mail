@@ -41,7 +41,7 @@ describe('Email saga', () => {
 		const gen = fetcEmailsSaga({ folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				url: `${URL.INBOX.EMAILS}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'get'
 			})
@@ -53,7 +53,7 @@ describe('Email saga', () => {
 		const gen = fetcEmailsSaga({ folder: 'sent', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['sent'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				url: `${URL.SENT.EMAILS}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'get'
 			})
@@ -65,7 +65,7 @@ describe('Email saga', () => {
 		const gen = fetcEmailsSaga({ folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				url: `${URL.INBOX.EMAILS}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'get'
 			})
@@ -77,7 +77,7 @@ describe('Email saga', () => {
 		const gen = deleteEmailsSaga({ folder: 'inbox', emails: [1], pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}/1`,
+				url: `${URL.INBOX.DELETE}/1`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'delete'
 			})
@@ -90,7 +90,7 @@ describe('Email saga', () => {
 		const gen = readEmailSaga({ folder: 'inbox', emails: [1], pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS[`${'inbox'.toUpperCase()}_READ`]}/1`,
+				url: `${URL.INBOX.READ}/1`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'put'
 			})
@@ -103,7 +103,7 @@ describe('Email saga', () => {
 		const gen = sendEmailSaga({ emailDetails: { name: 'dummyEmail' }, folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}`,
+				url: `${URL.INBOX.SEND}`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'post',
 				data: { name: 'dummyEmail' }
@@ -111,5 +111,6 @@ describe('Email saga', () => {
 		);
 		expect(gen.next().value).toEqual(put(fetchInboxDetails()));
 		expect(gen.next().value).toEqual(put(fetchEmails('inbox', 1, 20)));
+		expect(gen.next().value).toEqual(put(fetchEmails('sent', 1, 20)));
 	});
 });

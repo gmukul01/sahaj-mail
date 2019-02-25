@@ -12,7 +12,7 @@ export function* fetcEmailsSaga({ folder, pageNumber, emailsPerPage }) {
 		user: { accessToken, email }
 	} = loadState();
 	const { response, error } = yield call(fetch, {
-		url: `${URL.EMAILS[folder.toUpperCase()]}${email}&_sort=timestamp&_order=desc&_page=${pageNumber}&_limit=${emailsPerPage}`,
+		url: `${URL[folder.toUpperCase()].EMAILS}${email}&_sort=timestamp&_order=desc&_page=${pageNumber}&_limit=${emailsPerPage}`,
 		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
 		method: 'get'
 	});
@@ -26,7 +26,7 @@ export function* deleteEmailsSaga({ folder, emails, pageNumber, emailsPerPage })
 	} = loadState();
 	for (let id of emails) {
 		yield call(fetch, {
-			url: `${URL.EMAILS[folder.toUpperCase()]}/${id}`,
+			url: `${URL[folder.toUpperCase()].DELETE}/${id}`,
 			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
 			method: 'delete'
 		});
@@ -42,7 +42,7 @@ export function* readEmailSaga({ folder, emails, pageNumber, emailsPerPage }) {
 
 	for (let id of emails) {
 		yield call(fetch, {
-			url: `${URL.EMAILS[`${folder.toUpperCase()}_READ`]}/${id}`,
+			url: `${URL[folder.toUpperCase()].READ}/${id}`,
 			headers: { AUTHORIZATION: `Bearer ${accessToken}` },
 			method: 'put'
 		});
@@ -57,13 +57,14 @@ export function* sendEmailSaga({ emailDetails, folder, pageNumber, emailsPerPage
 	} = loadState();
 
 	yield call(fetch, {
-		url: `${URL.EMAILS[folder.toUpperCase()]}`,
+		url: `${URL[folder.toUpperCase()].SEND}`,
 		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
 		method: 'post',
 		data: emailDetails
 	});
 	yield put(fetchInboxDetails());
 	yield put(fetchEmails(folder, pageNumber, emailsPerPage));
+	yield put(fetchEmails('sent', pageNumber, emailsPerPage));
 }
 
 export default function* emailSaga() {
