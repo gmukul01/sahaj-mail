@@ -20,6 +20,11 @@ Login with below users:
 1. "email": "test1@email.com", "password": "test1"
 2. "email": "test2@email.com", "password": "test2"
 
+##### Requirements
+
+- node `v8.11.4` or latest
+- npm `5.6.0` or latest
+
 ##### Tech stack:
 
 - React
