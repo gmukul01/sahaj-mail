@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import Modal from 'components/Modal';
 
-const ReadEmail = ({ showModal, onCloseModal, emailDetails }) => {
+const ReadEmail = ({ showModal, onCloseModal, isSentMail, emailDetails }) => {
 	return (
 		<Modal {...{ showModal, onCloseModal, header: 'Read Message' }}>
 			<div className="read-email">
 				<div className="read-email-from">
-					<label>From</label>
-					<p>{emailDetails.from.email}</p>
+					<label>{isSentMail ? 'To' : 'From'}</label>
+					<p>{isSentMail ? emailDetails.to : emailDetails.from.email}</p>
 				</div>
 				<div className="read-email-subject">
 					<label>Subject</label>

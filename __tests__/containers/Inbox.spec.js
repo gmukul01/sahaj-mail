@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
 import Inbox from 'containers/inbox/Inbox';
-import { fetchInboxDetails } from 'actions/inbox';
 import { fetchEmails, deleteEmails, readEmails } from 'actions/emails';
 
 const mockStore = configureMockStore();
@@ -51,12 +50,6 @@ describe('Inbox Container', () => {
 		expect(inbox.prop('totalEmails')).toBe(initialState.inbox.totalEmails);
 		expect(inbox.prop('pageNumber')).toBe(initialState.inbox.pageNumber);
 		expect(inbox.prop('emailsPerPage')).toBe(initialState.inbox.emailsPerPage);
-	});
-
-	it('should dispatch fetchInboxDetails action when fetchInboxDetails is called', () => {
-		inbox.prop('fetchInboxDetails')();
-		const actions = store.getActions();
-		expect(actions[0]).toEqual(fetchInboxDetails());
 	});
 
 	it('should dispatch fetchEmails action when fetchEmails is called', () => {

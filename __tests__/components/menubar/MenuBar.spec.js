@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
 import MenuBar from 'components/menubar/MenuBar';
@@ -12,7 +13,13 @@ describe('MenuBar Component', () => {
 		};
 
 	it('should match snapshot', () => {
-		const menubar = renderer.create(<MenuBar {...initialProps} />).toJSON();
+		const menubar = renderer
+			.create(
+				<BrowserRouter>
+					<MenuBar {...initialProps} />
+				</BrowserRouter>
+			)
+			.toJSON();
 		expect(menubar).toMatchSnapshot();
 	});
 

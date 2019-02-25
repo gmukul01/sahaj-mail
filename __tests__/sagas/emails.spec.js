@@ -37,11 +37,11 @@ describe('Email saga', () => {
 		);
 	});
 
-	it('should dispatch fetchEmailsSuccess action when fetcEmailsSaga is called', () => {
+	it('should dispatch fetchEmailsSuccess action when fetcEmailsSaga is called from inbox', () => {
 		const gen = fetcEmailsSaga({ folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}?to=dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				url: `${URL.EMAILS['inbox'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'get'
 			})
@@ -49,11 +49,23 @@ describe('Email saga', () => {
 		expect(gen.next({ response: 'dummyResponse' }).value).toEqual(put(fetchEmailsSuccess('inbox', 'dummyResponse')));
 	});
 
+	it('should dispatch fetchEmailsSuccess action when fetcEmailsSaga is called from sentmail', () => {
+		const gen = fetcEmailsSaga({ folder: 'sent', pageNumber: 1, emailsPerPage: 20 });
+		expect(gen.next().value).toEqual(
+			call(fetch, {
+				url: `${URL.EMAILS['sent'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
+				method: 'get'
+			})
+		);
+		expect(gen.next({ response: 'dummyResponse' }).value).toEqual(put(fetchEmailsSuccess('sent', 'dummyResponse')));
+	});
+
 	it('should dispatch fetchEmailsError action when fetcEmailsSaga throws error', () => {
 		const gen = fetcEmailsSaga({ folder: 'inbox', pageNumber: 1, emailsPerPage: 20 });
 		expect(gen.next().value).toEqual(
 			call(fetch, {
-				url: `${URL.EMAILS['inbox'.toUpperCase()]}?to=dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
+				url: `${URL.EMAILS['inbox'.toUpperCase()]}dummy@email.com&_sort=timestamp&_order=desc&_page=1&_limit=20`,
 				headers: { AUTHORIZATION: `Bearer dummyAccessToken` },
 				method: 'get'
 			})

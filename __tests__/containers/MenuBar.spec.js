@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
 
 import MenuBar from 'containers/menubar/MenuBar';
@@ -25,7 +26,9 @@ describe('MenuBar Container', () => {
 		store = mockStore(initialState);
 		const wrapper = mount(
 			<Provider store={store}>
-				<MenuBar />
+				<BrowserRouter>
+					<MenuBar />
+				</BrowserRouter>
 			</Provider>
 		);
 		menubar = wrapper.find('MenuBar');

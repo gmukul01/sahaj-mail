@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import Inbox from 'components/inbox/Inbox';
-import { fetchInboxDetails } from 'actions/inbox';
 import { fetchEmails, deleteEmails, readEmails } from 'actions/emails';
 
 const mapStateToProps = ({ inbox: { pageNumber, totalEmails, emailsPerPage, emails } }) => ({
@@ -33,6 +32,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 
 export default connect(
 	mapStateToProps,
-	{ fetchInboxDetails, fetchEmails, deleteEmails, readEmails },
+	{ fetchEmails, deleteEmails, readEmails },
 	mergeProps
 )(Inbox);

@@ -31,5 +31,6 @@ body {
 @import './components/email/emaillist';
 @import './components/email/compose';
 @import './components/inbox/inbox';
+@import './components/sentMail/sentMail.scss';
 @import './pages/login';
 @import './pages/mailbox';

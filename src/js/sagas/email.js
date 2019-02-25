@@ -12,7 +12,7 @@ export function* fetcEmailsSaga({ folder, pageNumber, emailsPerPage }) {
 		user: { accessToken, email }
 	} = loadState();
 	const { response, error } = yield call(fetch, {
-		url: `${URL.EMAILS[folder.toUpperCase()]}?to=${email}&_sort=timestamp&_order=desc&_page=${pageNumber}&_limit=${emailsPerPage}`,
+		url: `${URL.EMAILS[folder.toUpperCase()]}${email}&_sort=timestamp&_order=desc&_page=${pageNumber}&_limit=${emailsPerPage}`,
 		headers: { AUTHORIZATION: `Bearer ${accessToken}` },
 		method: 'get'
 	});

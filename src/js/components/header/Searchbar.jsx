@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Searchbar = () => {
+const Searchbar = ({ handleSidebarOpen }) => {
 	return (
 		<div className="header-searchbar">
-			<button>
+			<button onClick={handleSidebarOpen}>
 				<i className="fas fa-bars" />
 			</button>
 			<input type="text" value={''} placeholder="Search for something..." onChange={() => {}} />

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inbox Component should match snapshot 1`] = `
+<section
+  className="content inbox"
+>
+  <div
+    className="inbox-topbar"
+  >
+    <div
+      className="title"
+    >
+      Inbox ()
+    </div>
+  </div>
+  <div
+    className="inbox-actionbar"
+  >
+    <div
+      className="actions"
+    >
+      <button
+        className="button-outlined actions-refresh"
+        onClick={[Function]}
+      >
+        <i
+          className="fas fa-sync-alt"
+        />
+        Refresh
+      </button>
+      <button
+        className="button-outlined"
+        onClick={[Function]}
+      >
+        <i
+          className="far fa-eye"
+        />
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-exclamation"
+        />
+      </button>
+      <button
+        className="button-outlined"
+        onClick={[Function]}
+      >
+        <i
+          className="far fa-trash-alt"
+        />
+      </button>
+    </div>
+    <div>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-arrow-left"
+        />
+      </button>
+      <button
+        className="button-outlined"
+      >
+        <i
+          className="fas fa-arrow-right"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="email-list"
+  />
+</section>
+`;

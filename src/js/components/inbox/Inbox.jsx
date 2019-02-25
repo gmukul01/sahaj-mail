@@ -7,11 +7,10 @@ import ActionBar from './ActionBar';
 
 const Inbox = props => {
 	const { selectedEmails, addToSelectedEmails, clearSelectedEmails } = selectedEmailsState([]);
-	const { totalEmails, emails, fetchEmails, deleteEmails, readEmails, fetchInboxDetails } = props;
+	const { totalEmails, emails, fetchEmails, deleteEmails, readEmails } = props;
 
 	useEffect(() => {
 		fetchEmails();
-		fetchInboxDetails();
 	}, []);
 
 	function onRead() {

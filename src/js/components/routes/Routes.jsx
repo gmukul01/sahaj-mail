@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 import PrivateRoute from './PrivateRoute';
 import Loginpage from 'containers/pages/LoginPage';
-import Mailbox from 'components/pages/MailBox';
+import Mailbox from 'containers/pages/MailBox';
 
 const Routes = ({ isUserLoggedIn }) => (
 	<Switch>
 		<Route exact path="/login" component={Loginpage} />
+		<PrivateRoute path="/sent" component={Mailbox} isAuthenticated={isUserLoggedIn} />
 		<PrivateRoute path="/" component={Mailbox} isAuthenticated={isUserLoggedIn} />
 	</Switch>
 );

@@ -12,12 +12,12 @@ const EmailListItem = props => {
 			props.onRead([props.id]);
 			setModalState(true);
 		},
-		{ selectedEmails, addToSelectedEmails, id, from, subject, body, isRead, category, hasAttachment, timestamp } = props,
+		{ selectedEmails, addToSelectedEmails, id, from, to, subject, body, isRead, category, hasAttachment, isSentMail, timestamp } = props,
 		listClassName = classNames('email-list-item', { selected: selectedEmails.includes(id + '') || isRead });
 
 	return (
 		<>
-			<ReadEmail {...{ emailDetails: { from, subject, body }, showModal, onCloseModal }} />
+			<ReadEmail {...{ emailDetails: { from, to, subject, body }, isSentMail, showModal, onCloseModal }} />
 			<div className={listClassName}>
 				<div className="email-list-item__checkbox">
 					<CheckBox id={id} selected={selectedEmails.includes(id)} onChange={addToSelectedEmails} />

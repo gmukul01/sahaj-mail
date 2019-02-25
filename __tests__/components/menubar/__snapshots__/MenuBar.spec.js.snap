@@ -75,7 +75,7 @@ exports[`MenuBar Component should match snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div
+  <nav
     className="menubar-folders"
   >
     <h5>
@@ -83,12 +83,15 @@ exports[`MenuBar Component should match snapshot 1`] = `
     </h5>
     <ul>
       <li>
-        <span>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
           <i
             className="fas fa-inbox"
           />
           Inbox
-        </span>
+        </a>
         <button
           className="menubar-folders-inbox chips-btn"
         >
@@ -96,28 +99,37 @@ exports[`MenuBar Component should match snapshot 1`] = `
         </button>
       </li>
       <li>
-        <span>
+        <a
+          href="/sent"
+          onClick={[Function]}
+        >
           <i
             className="fas fa-envelope"
           />
           Send Email
-        </span>
+        </a>
       </li>
       <li>
-        <span>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
           <i
             className="fas fa-certificate"
           />
           Important
-        </span>
+        </a>
       </li>
       <li>
-        <span>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
           <i
             className="fas fa-file-alt"
           />
           Drafts
-        </span>
+        </a>
         <button
           className="menubar-folders-drafts chips-btn"
         >
@@ -125,15 +137,18 @@ exports[`MenuBar Component should match snapshot 1`] = `
         </button>
       </li>
       <li>
-        <span>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
           <i
             className="fas fa-trash-alt"
           />
           Trash
-        </span>
+        </a>
       </li>
     </ul>
-  </div>
+  </nav>
   <div
     className="menubar-categories"
   >

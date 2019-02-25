@@ -1,31 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Folders = ({ totalUnread }) => {
 	const data = [
-		{ name: 'Inbox', icon: 'inbox', count: totalUnread },
-		{ name: 'Send Email', icon: 'envelope' },
-		{ name: 'Important', icon: 'certificate' },
-		{ name: 'Drafts', icon: 'file-alt', count: 2 },
-		{ name: 'Trash', icon: 'trash-alt' }
+		{ name: 'Inbox', to: '/', icon: 'inbox', count: totalUnread },
+		{ name: 'Send Email', to: '/sent', icon: 'envelope' },
+		{ name: 'Important', to: '/', icon: 'certificate' },
+		{ name: 'Drafts', to: '/', icon: 'file-alt', count: 2 },
+		{ name: 'Trash', to: '/', icon: 'trash-alt' }
 	];
 	return (
-		<div className={'menubar-folders'}>
+		<nav className={'menubar-folders'}>
 			<h5>FOLDERS</h5>
 			<ul>
 				{data.map(folder => (
 					<li key={folder.name}>
-						<span>
+						<Link to={folder.to}>
 							<i className={`fas fa-${folder.icon}`} />
 							{folder.name}
-						</span>
+						</Link>
 						{folder.count && folder.count !== 0 ? (
 							<button className={`menubar-folders-${folder.name.toLowerCase()} chips-btn`}>{folder.count}</button>
 						) : null}
 					</li>
 				))}
 			</ul>
-		</div>
+		</nav>
 	);
 };
 

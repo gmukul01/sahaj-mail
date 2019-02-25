@@ -30,6 +30,11 @@
 			align-items: center;
 			padding: 6px 0;
 			border-bottom: 1px solid $primary-border-color;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
 		}
 
 		@each $folder, $color in $folders-colors {
