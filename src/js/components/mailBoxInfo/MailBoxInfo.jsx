@@ -5,9 +5,9 @@ import TopBar from './TopBar';
 import EmailList from 'components/email/EmailList';
 import ActionBar from './ActionBar';
 
-const Inbox = props => {
+const MailBoxInfo = props => {
 	const { selectedEmails, addToSelectedEmails, clearSelectedEmails } = selectedEmailsState([]);
-	const { totalEmails, emails, fetchEmails, deleteEmails, readEmails } = props;
+	const { totalEmails, emails, isSentMail, fetchEmails, deleteEmails, readEmails, title } = props;
 
 	useEffect(() => {
 		fetchEmails();
@@ -29,15 +29,15 @@ const Inbox = props => {
 	}
 
 	return (
-		<section className="content inbox">
-			<TopBar totalEmails={totalEmails} />
+		<section className="content mailBoxInfo">
+			<TopBar title={title} totalEmails={totalEmails} />
 			<ActionBar {...{ onRefresh, onDelete, onRead }} />
-			<EmailList {...{ selectedEmails, addToSelectedEmails, onRead: readEmails, emails }} />
+			<EmailList isSentMail={isSentMail} {...{ selectedEmails, addToSelectedEmails, onRead: readEmails, emails }} />
 		</section>
 	);
 };
 
-Inbox.propTypes = {
+MailBoxInfo.propTypes = {
 	totalEmails: PropTypes.number,
 	emails: PropTypes.array,
 	fetchEmails: PropTypes.func,
@@ -46,7 +46,7 @@ Inbox.propTypes = {
 	fetchInboxDetails: PropTypes.func
 };
 
-export default React.memo(Inbox);
+export default React.memo(MailBoxInfo);
 
 const selectedEmailsState = initialValue => {
 	const [emails, setValue] = useState(initialValue);

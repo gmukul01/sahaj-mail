@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import Inbox from 'components/inbox/Inbox';
+import MailBoxInfo from 'components/mailBoxInfo/MailBoxInfo';
 
-describe('Inbox Component', () => {
+describe('MailBoxInfo Component', () => {
 	const mockFetchEmail = jest.fn(),
 		mockDeleteEmail = jest.fn(),
 		mockReadEmail = jest.fn(),
@@ -13,7 +13,8 @@ describe('Inbox Component', () => {
 			emails: [],
 			fetchEmails: mockFetchEmail,
 			deleteEmails: mockDeleteEmail,
-			readEmails: mockReadEmail
+			readEmails: mockReadEmail,
+			title: 'Inbox'
 		};
 
 	afterEach(() => {
@@ -23,25 +24,25 @@ describe('Inbox Component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const inbox = renderer.create(<Inbox {...initialProps} />).toJSON();
-		expect(inbox).toMatchSnapshot();
+		const mailBoxInfo = renderer.create(<MailBoxInfo {...initialProps} />).toJSON();
+		expect(mailBoxInfo).toMatchSnapshot();
 	});
 
 	it('should call fetchEmails when refresh is clicked', () => {
-		const inbox = shallow(<Inbox {...initialProps} />);
-		inbox.find('ActionBar').prop('onRefresh')();
+		const mailBoxInfo = shallow(<MailBoxInfo {...initialProps} />);
+		mailBoxInfo.find('ActionBar').prop('onRefresh')();
 		expect(mockFetchEmail.mock.calls.length).toBe(1);
 	});
 
 	it('should call deleteEmails when delete is clicked', () => {
-		const inbox = shallow(<Inbox {...initialProps} />);
-		inbox.find('ActionBar').prop('onDelete')();
+		const mailBoxInfo = shallow(<MailBoxInfo {...initialProps} />);
+		mailBoxInfo.find('ActionBar').prop('onDelete')();
 		expect(mockDeleteEmail.mock.calls.length).toBe(1);
 	});
 
 	it('should call onRead when read is clicked', () => {
-		const inbox = shallow(<Inbox {...initialProps} />);
-		inbox.find('ActionBar').prop('onRead')();
+		const mailBoxInfo = shallow(<MailBoxInfo {...initialProps} />);
+		mailBoxInfo.find('ActionBar').prop('onRead')();
 		expect(mockReadEmail.mock.calls.length).toBe(1);
 	});
 });

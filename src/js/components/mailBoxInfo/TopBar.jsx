@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TopBar = ({ totalEmails }) => (
-	<div className="inbox-topbar">
-		<div className={'title'}>{`Inbox (${totalEmails || ''})`}</div>
+const TopBar = ({ title, totalEmails }) => (
+	<div className="mailBoxInfo-topbar">
+		<div className={'title'}>{`${title} (${totalEmails || ''})`}</div>
 	</div>
 );
 

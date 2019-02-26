@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Inbox from 'components/inbox/Inbox';
+import MailBoxInfo from 'components/mailBoxInfo/MailBoxInfo';
 import { fetchEmails, deleteEmails, readEmails } from 'actions/emails';
 
 const mapStateToProps = ({ inbox: { pageNumber, totalEmails, emailsPerPage, emails } }) => ({
@@ -17,6 +17,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 		...stateProps,
 		...dispatchProps,
 		...ownProps,
+		title: 'Inbox',
+		isSentMail: false,
 		fetchEmails() {
 			fetchEmails('inbox', pageNumber, emailsPerPage);
 		},
@@ -34,4 +36,4 @@ export default connect(
 	mapStateToProps,
 	{ fetchEmails, deleteEmails, readEmails },
 	mergeProps
-)(Inbox);
+)(MailBoxInfo);

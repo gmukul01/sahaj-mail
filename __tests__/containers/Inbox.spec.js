@@ -8,7 +8,7 @@ import { fetchEmails, deleteEmails, readEmails } from 'actions/emails';
 
 const mockStore = configureMockStore();
 describe('Inbox Container', () => {
-	let inbox, store;
+	let mailBoxInfo, store;
 	const initialState = {
 		inbox: {
 			pageNumber: 1,
@@ -42,30 +42,31 @@ describe('Inbox Container', () => {
 				<Inbox />
 			</Provider>
 		);
-		inbox = wrapper.find('Inbox');
+		mailBoxInfo = wrapper.find('MailBoxInfo');
 	});
 
 	it('should map correct store value to props', () => {
-		expect(inbox.prop('emails')).toBe(initialState.inbox.emails);
-		expect(inbox.prop('totalEmails')).toBe(initialState.inbox.totalEmails);
-		expect(inbox.prop('pageNumber')).toBe(initialState.inbox.pageNumber);
-		expect(inbox.prop('emailsPerPage')).toBe(initialState.inbox.emailsPerPage);
+		expect(mailBoxInfo.prop('title')).toBe('Inbox');
+		expect(mailBoxInfo.prop('emails')).toBe(initialState.inbox.emails);
+		expect(mailBoxInfo.prop('totalEmails')).toBe(initialState.inbox.totalEmails);
+		expect(mailBoxInfo.prop('pageNumber')).toBe(initialState.inbox.pageNumber);
+		expect(mailBoxInfo.prop('emailsPerPage')).toBe(initialState.inbox.emailsPerPage);
 	});
 
 	it('should dispatch fetchEmails action when fetchEmails is called', () => {
-		inbox.prop('fetchEmails')();
+		mailBoxInfo.prop('fetchEmails')();
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(fetchEmails('inbox', 1, 20));
 	});
 
 	it('should dispatch deleteEmails action when deleteEmails is called', () => {
-		inbox.prop('deleteEmails')([1, 2]);
+		mailBoxInfo.prop('deleteEmails')([1, 2]);
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(deleteEmails('inbox', [1, 2], 1, 20));
 	});
 
 	it('should dispatch readEmails action when readEmails is called', () => {
-		inbox.prop('readEmails')([1, 2]);
+		mailBoxInfo.prop('readEmails')([1, 2]);
 		const actions = store.getActions();
 		expect(actions[0]).toEqual(readEmails('inbox', [2], 1, 20));
 	});

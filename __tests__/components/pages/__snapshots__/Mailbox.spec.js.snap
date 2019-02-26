@@ -539,8 +539,73 @@ exports[`Mailbox Component should match snapshot when path is / 1`] = `
     </div>
   </section>
   <section
-    className="content sentMail"
+    className="content mailBoxInfo"
   >
+    <div
+      className="mailBoxInfo-topbar"
+    >
+      <div
+        className="title"
+      >
+        Sent ()
+      </div>
+    </div>
+    <div
+      className="mailBoxInfo-actionbar"
+    >
+      <div
+        className="actions"
+      >
+        <button
+          className="button-outlined actions-refresh"
+          onClick={[Function]}
+        >
+          <i
+            className="fas fa-sync-alt"
+          />
+          Refresh
+        </button>
+        <button
+          className="button-outlined"
+          onClick={[Function]}
+        >
+          <i
+            className="far fa-eye"
+          />
+        </button>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-exclamation"
+          />
+        </button>
+        <button
+          className="button-outlined"
+          onClick={[Function]}
+        >
+          <i
+            className="far fa-trash-alt"
+          />
+        </button>
+      </div>
+      <div>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-arrow-left"
+          />
+        </button>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-arrow-right"
+          />
+        </button>
+      </div>
+    </div>
     <div
       className="email-list"
     />
@@ -1087,8 +1152,73 @@ exports[`Mailbox Component should match snapshot when path is /sent 1`] = `
     </div>
   </section>
   <section
-    className="content sentMail"
+    className="content mailBoxInfo"
   >
+    <div
+      className="mailBoxInfo-topbar"
+    >
+      <div
+        className="title"
+      >
+        Sent ()
+      </div>
+    </div>
+    <div
+      className="mailBoxInfo-actionbar"
+    >
+      <div
+        className="actions"
+      >
+        <button
+          className="button-outlined actions-refresh"
+          onClick={[Function]}
+        >
+          <i
+            className="fas fa-sync-alt"
+          />
+          Refresh
+        </button>
+        <button
+          className="button-outlined"
+          onClick={[Function]}
+        >
+          <i
+            className="far fa-eye"
+          />
+        </button>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-exclamation"
+          />
+        </button>
+        <button
+          className="button-outlined"
+          onClick={[Function]}
+        >
+          <i
+            className="far fa-trash-alt"
+          />
+        </button>
+      </div>
+      <div>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-arrow-left"
+          />
+        </button>
+        <button
+          className="button-outlined"
+        >
+          <i
+            className="fas fa-arrow-right"
+          />
+        </button>
+      </div>
+    </div>
     <div
       className="email-list"
     />

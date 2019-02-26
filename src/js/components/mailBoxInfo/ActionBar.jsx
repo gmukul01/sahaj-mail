@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ActionBar = ({ onRefresh, onDelete, onRead }) => (
-	<div className="inbox-actionbar">
+	<div className="mailBoxInfo-actionbar">
 		<div className="actions">
 			<button className="button-outlined actions-refresh" onClick={onRefresh}>
 				<i className="fas fa-sync-alt" />

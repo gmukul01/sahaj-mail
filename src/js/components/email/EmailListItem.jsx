@@ -13,7 +13,7 @@ const EmailListItem = props => {
 			setModalState(true);
 		},
 		{ selectedEmails, addToSelectedEmails, id, from, to, subject, body, isRead, category, hasAttachment, isSentMail, timestamp } = props,
-		listClassName = classNames('email-list-item', { selected: selectedEmails.includes(id + '') || isRead });
+		listClassName = classNames('email-list-item', { selected: isSentMail || selectedEmails.includes(id + '') || isRead });
 
 	return (
 		<>

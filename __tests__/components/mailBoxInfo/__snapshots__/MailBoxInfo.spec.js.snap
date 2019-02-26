@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Inbox Component should match snapshot 1`] = `
+exports[`MailBoxInfo Component should match snapshot 1`] = `
 <section
-  className="content inbox"
+  className="content mailBoxInfo"
 >
   <div
-    className="inbox-topbar"
+    className="mailBoxInfo-topbar"
   >
     <div
       className="title"
@@ -14,7 +14,7 @@ exports[`Inbox Component should match snapshot 1`] = `
     </div>
   </div>
   <div
-    className="inbox-actionbar"
+    className="mailBoxInfo-actionbar"
   >
     <div
       className="actions"
