@@ -17,12 +17,14 @@ const Folders = ({ totalUnread }) => {
 				{data.map(folder => (
 					<li key={folder.name}>
 						<Link to={folder.to}>
-							<i className={`fas fa-${folder.icon}`} />
-							{folder.name}
+							<span>
+								<i className={`fas fa-${folder.icon}`} />
+								{folder.name}
+							</span>
+							{folder.count && folder.count !== 0 ? (
+								<button className={`menubar-folders-${folder.name.toLowerCase()} chips-btn`}>{folder.count}</button>
+							) : null}
 						</Link>
-						{folder.count && folder.count !== 0 ? (
-							<button className={`menubar-folders-${folder.name.toLowerCase()} chips-btn`}>{folder.count}</button>
-						) : null}
 					</li>
 				))}
 			</ul>

@@ -24,17 +24,14 @@
 	}
 
 	&-folders {
-		li {
+		a {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			padding: 6px 0;
 			border-bottom: 1px solid $primary-border-color;
-
-			a {
-				text-decoration: none;
-				color: inherit;
-			}
+			text-decoration: none;
+			color: inherit;
 		}
 
 		@each $folder, $color in $folders-colors {

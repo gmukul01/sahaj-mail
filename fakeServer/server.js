@@ -65,7 +65,10 @@ server.post('/api/emails', async (req, res, next) => {
 
 	++inbox.totalEmails;
 	++inbox.totalUnread;
-	await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db));
+	await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db), err => {
+		if (err) throw err;
+		console.log('The file has been saved!');
+	});
 	req.body = { ...req.body, timestamp: Date.now() };
 	next();
 });
@@ -78,7 +81,10 @@ server.put('/api/readEmail/:id', async (req, res, next) => {
 	if (!email.isRead) {
 		const inbox = db.find(({ email }) => email === req.headers.email);
 		--inbox.totalUnread;
-		await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db));
+		await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db), err => {
+			if (err) throw err;
+			console.log('The file has been saved!');
+		});
 	}
 
 	req.body = { ...email, isRead: true };
@@ -93,7 +99,10 @@ server.delete('/api/emails/:id', async (req, res, next) => {
 
 	--inbox.totalEmails;
 	if (!emails.find(({ id }) => id === Number(req.params.id)).isRead) --inbox.totalUnread;
-	await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db));
+	await fs.writeFile('./fakeServer/database/inbox.json', JSON.stringify(db), err => {
+		if (err) throw err;
+		console.log('The file has been saved!');
+	});
 	next();
 });
 

@@ -23,7 +23,7 @@ const EmailListItem = props => {
 					<CheckBox id={id} selected={selectedEmails.includes(id)} onChange={addToSelectedEmails} />
 				</div>
 				<div onClick={onEmailClick} className="email-list-item__rest">
-					<p className="email-list-item__from">{from.name}</p>
+					<p className="email-list-item__from">{isSentMail ? to : from.name}</p>
 					<div className="email-list-item__category">{category && <button className={`chips-btn ${category.toLowerCase()}`}>{category}</button>}</div>
 					<p className="email-list-item__subject">{subject || 'no subject'}</p>
 					<p className="email-list-item__attachment"> {hasAttachment ? <i className="fas fa-paperclip" /> : null}</p>

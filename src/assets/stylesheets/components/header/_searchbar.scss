@@ -2,6 +2,7 @@
 	button {
 		@include center-align();
 
+		cursor: pointer;
 		color: #fff;
 		background: $primary-color;
 		border: 0;
