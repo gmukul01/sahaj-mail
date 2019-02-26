@@ -34,6 +34,10 @@
 			color: inherit;
 		}
 
+		a.active {
+			font-weight: 900;
+		}
+
 		@each $folder, $color in $folders-colors {
 			&-#{$folder} {
 				background-color: $color;

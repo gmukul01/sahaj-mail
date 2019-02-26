@@ -27,7 +27,7 @@ describe('MenuBar Container', () => {
 		const wrapper = mount(
 			<Provider store={store}>
 				<BrowserRouter>
-					<MenuBar />
+					<MenuBar match={{ path: '/' }} />
 				</BrowserRouter>
 			</Provider>
 		);

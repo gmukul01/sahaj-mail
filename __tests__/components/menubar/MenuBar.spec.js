@@ -16,7 +16,7 @@ describe('MenuBar Component', () => {
 		const menubar = renderer
 			.create(
 				<BrowserRouter>
-					<MenuBar {...initialProps} />
+					<MenuBar {...initialProps} match={{ path: '/' }} />
 				</BrowserRouter>
 			)
 			.toJSON();
@@ -24,7 +24,7 @@ describe('MenuBar Component', () => {
 	});
 
 	it('should call mockSendEmail when sendEmail is called', () => {
-		const menubar = shallow(<MenuBar {...initialProps} />);
+		const menubar = shallow(<MenuBar {...initialProps} match={{ path: '/' }} />);
 		menubar.find('ComposeEmail').prop('sendEmail')('Dummy');
 		expect(mockSendEmail.mock.calls[0][0]).toBe('Dummy');
 	});

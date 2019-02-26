@@ -12,6 +12,7 @@
 		width: 100%;
 		box-sizing: border-box;
 		max-height: 58px;
+		cursor: pointer;
 
 		.sidebar-dropdown,
 		p {
@@ -45,6 +46,7 @@
 		border: 0;
 		font-size: 1rem;
 		color: $sidebar-icon-color;
+		cursor: pointer;
 
 		i {
 			color: $sidebar-icon-color;

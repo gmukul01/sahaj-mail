@@ -6,7 +6,7 @@ import Labels from './Labels';
 import Categories from './Categories';
 import ComposeEmail from 'components/email/ComposeEmail';
 
-const MenuBar = ({ totalUnread, sendEmail }) => {
+const MenuBar = ({ totalUnread, sendEmail, match }) => {
 	const [showModal, setModalState] = useState(false),
 		onCloseModal = () => setModalState(false),
 		onOpenModal = () => setModalState(true);
@@ -17,7 +17,7 @@ const MenuBar = ({ totalUnread, sendEmail }) => {
 				Compose Mail
 			</button>
 			<ComposeEmail {...{ showModal, onCloseModal, sendEmail }} />
-			<Folders totalUnread={totalUnread} />
+			<Folders totalUnread={totalUnread} match={match} />
 			<Categories />
 			<Labels />
 		</section>
@@ -26,7 +26,8 @@ const MenuBar = ({ totalUnread, sendEmail }) => {
 
 MenuBar.propTyoes = {
 	totalUnread: PropTypes.number,
-	sendEmail: PropTypes.func
+	sendEmail: PropTypes.func,
+	match: PropTypes.object
 };
 
 export default React.memo(MenuBar);

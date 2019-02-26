@@ -84,67 +84,82 @@ exports[`MenuBar Component should match snapshot 1`] = `
     <ul>
       <li>
         <a
+          className="active"
           href="/"
           onClick={[Function]}
         >
-          <i
-            className="fas fa-inbox"
-          />
-          Inbox
+          <span>
+            <i
+              className="fas fa-inbox"
+            />
+            Inbox
+          </span>
+          <button
+            className="menubar-folders-inbox chips-btn"
+          >
+            2
+          </button>
         </a>
-        <button
-          className="menubar-folders-inbox chips-btn"
-        >
-          2
-        </button>
       </li>
       <li>
         <a
+          className=""
           href="/sent"
           onClick={[Function]}
         >
-          <i
-            className="fas fa-envelope"
-          />
-          Send Email
+          <span>
+            <i
+              className="fas fa-envelope"
+            />
+            Send Email
+          </span>
         </a>
       </li>
       <li>
         <a
+          className=""
           href="/"
           onClick={[Function]}
         >
-          <i
-            className="fas fa-certificate"
-          />
-          Important
+          <span>
+            <i
+              className="fas fa-certificate"
+            />
+            Important
+          </span>
         </a>
       </li>
       <li>
         <a
+          className=""
           href="/"
           onClick={[Function]}
         >
-          <i
-            className="fas fa-file-alt"
-          />
-          Drafts
+          <span>
+            <i
+              className="fas fa-file-alt"
+            />
+            Drafts
+          </span>
+          <button
+            className="menubar-folders-drafts chips-btn"
+          >
+            2
+          </button>
         </a>
-        <button
-          className="menubar-folders-drafts chips-btn"
-        >
-          2
-        </button>
       </li>
       <li>
         <a
+          className=""
           href="/"
           onClick={[Function]}
         >
-          <i
-            className="fas fa-trash-alt"
-          />
-          Trash
+          <span>
+            <i
+              className="fas fa-trash-alt"
+            />
+            Trash
+          </span>
         </a>
       </li>
     </ul>

@@ -20,7 +20,7 @@ const MailBox = ({ match, fetchInboxDetails }) => {
 		<div className={mailBoxClass}>
 			<SideBar sidebarState={sidebarState} handleSidebarOpen={handleSidebarOpen} />
 			<Header handleSidebarOpen={handleSidebarOpen} />
-			<MenuBar />
+			<MenuBar match={match} />
 			{match.path === '/sent' ? <SentMail /> : <Inbox />}
 		</div>
 	);
