@@ -18,7 +18,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 		...dispatchProps,
 		...ownProps,
 		title: 'Inbox',
-		isSentMail: false,
 		fetchEmails() {
 			fetchEmails('inbox', pageNumber, emailsPerPage);
 		},
