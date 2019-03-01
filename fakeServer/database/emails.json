@@ -49,7 +49,7 @@
 			"id": 4,
 			"from": {
 				"name": "Test1",
-				"email": "test1email.com"
+				"email": "test1@email.com"
 			},
 			"to": "test2@email.com",
 			"category": "Work",
